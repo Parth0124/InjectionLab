@@ -20,7 +20,11 @@ const app = express();
 const PORT = process.env.PORT || 4000;
 
 // mongodb connection
-connectDB();
+try {
+  connectDB();
+} catch (error) {
+  logger.error('Error connecting to MongoDB:', error.message);
+}
 
 // cors config
 app.use(helmet());
@@ -77,6 +81,7 @@ app.use('*', (req, res) => {
   });
 });
 
+// port opening
 app.listen(PORT, () => {
   logger.info(`Server running on port ${PORT}`);
 });
