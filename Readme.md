@@ -130,7 +130,7 @@ npm run dev
 
 ## 🤝 Contributors
 
-* Aditya Gangwar @Adityagangwar2674
-* Noman Mirza @Nomanbaig7342
-* Parth Abhang @Parth0124
-* Arya Sali @Arya2422
+- [Aditya Gangwar](https://github.com/Adityagangwar2674)
+- [Noman Mirza](https://github.com/Nomanbaig7342)
+- [Parth Abhang](https://github.com/Parth0124)
+- [Arya Sali](https://github.com/Arya2422)
