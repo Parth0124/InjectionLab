@@ -205,27 +205,22 @@ const progressiveLimiter = rateLimit({
   max: (req) => {
     const key = req.user?.id || req.ip;
     const violations = violationCounts.get(key) || 0;
-    
+
     // Base limit decreases with violations
     const baseLimit = 100;
     const reduction = Math.min(violations * 10, 80); // Max 80% reduction
     return Math.max(baseLimit - reduction, 10); // Minimum 10 requests
   },
-  message: {
-    success: false,
-    message: 'Rate limit exceeded. Repeated violations result in stricter limits.',
-    retryAfter: 900
-  },
   standardHeaders: true,
   legacyHeaders: false,
-  onLimitReached: (req) => {
+  handler: (req, res) => {
     const key = req.user?.id || req.ip;
-    const violations = violationCounts.get(key) || 0;
-    violationCounts.set(key, violations + 1);
-    
-    logger.warn(`Progressive rate limit violation #${violations + 1} for ${key}`);
-    
-    // Clean up old violations periodically
+    const violations = (violationCounts.get(key) || 0) + 1;
+    violationCounts.set(key, violations);
+
+    logger.warn(`Progressive rate limit violation #${violations} for ${key}`);
+
+    // Decrease violation count over time (1 hour decay)
     setTimeout(() => {
       const currentViolations = violationCounts.get(key) || 0;
       if (currentViolations > 1) {
@@ -233,9 +228,17 @@ const progressiveLimiter = rateLimit({
       } else {
         violationCounts.delete(key);
       }
-    }, 60 * 60 * 1000); // Reduce violation count after 1 hour
+    }, 60 * 60 * 1000);
+
+    // Send response
+    res.status(429).json({
+      success: false,
+      message: 'Rate limit exceeded. Repeated violations result in stricter limits.',
+      retryAfter: 900
+    });
   }
 });
+
 
 module.exports = {
   generalLimiter,

@@ -47,6 +47,24 @@ app.use((req, res, next) => {
   next();
 });
 
+app.get('/', (req, res) => {
+  res.status(200).json({
+    success: true,
+    message: 'Welcome to InjectionLab Backend API',
+    version: '1.0.0',
+    endpoints: {
+      health: '/api/health',
+      auth: '/api/auth',
+      users: '/api/users',
+      challenges: '/api/challenges',
+      sqlInjection: '/api/sql-injection',
+      admin: '/api/admin'
+    },
+    documentation: 'API documentation available at /api-docs',
+    timestamp: new Date().toISOString()
+  });
+});
+
 // routes
 app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
@@ -74,7 +92,7 @@ app.use((err, req, res, next) => {
 });
 
 // 404 handler
-app.use('*', (req, res) => {
+app.use((req, res) => {
   res.status(404).json({
     success: false,
     message: 'Route not found'
