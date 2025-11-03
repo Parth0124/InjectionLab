@@ -140,3 +140,42 @@
 {"level":"info","message":"GET /api/sql-injection/educational-content/6907be233c90edc32260474c - ::1","service":"injectionlab-backend","timestamp":"2025-11-02T20:30:17.408Z"}
 {"level":"info","message":"GET /api/sql-injection/prevention-techniques/:category - ::1","service":"injectionlab-backend","timestamp":"2025-11-02T20:31:02.551Z"}
 {"level":"info","message":"GET /api/auth/profile - ::1","service":"injectionlab-backend","timestamp":"2025-11-02T20:31:58.435Z"}
+{"level":"info","message":"POST /api/auth/register - ::1","service":"injectionlab-backend","timestamp":"2025-11-02T21:05:12.433Z"}
+{"level":"info","message":"POST /api/auth/register - ::1","service":"injectionlab-backend","timestamp":"2025-11-02T21:05:33.069Z"}
+{"level":"info","message":"New user registered: AbhangParth","service":"injectionlab-backend","timestamp":"2025-11-02T21:05:33.458Z"}
+{"level":"info","message":"POST /api/auth/register - ::1","service":"injectionlab-backend","timestamp":"2025-11-02T21:05:44.983Z"}
+{"level":"info","message":"POST /api/auth/register - ::1","service":"injectionlab-backend","timestamp":"2025-11-02T21:05:53.264Z"}
+{"level":"info","message":"POST /api/auth/register - ::1","service":"injectionlab-backend","timestamp":"2025-11-02T21:06:05.134Z"}
+{"level":"info","message":"New user registered: Aditya","service":"injectionlab-backend","timestamp":"2025-11-02T21:06:05.522Z"}
+{"level":"info","message":"POST /api/auth/login - ::1","service":"injectionlab-backend","timestamp":"2025-11-02T21:08:13.903Z"}
+{"level":"info","message":"User logged in: ParthAbhang","service":"injectionlab-backend","timestamp":"2025-11-02T21:08:14.680Z"}
+{"level":"info","message":"POST /api/admin/users - ::1","service":"injectionlab-backend","timestamp":"2025-11-02T21:08:39.205Z"}
+{"level":"info","message":"GET /api/admin/users - ::1","service":"injectionlab-backend","timestamp":"2025-11-02T21:08:43.240Z"}
+{"level":"info","message":"GET /api/admin/users/690768bb5f474a50979c1143/status - ::1","service":"injectionlab-backend","timestamp":"2025-11-02T21:11:38.879Z"}
+{"level":"info","message":"GET /api/admin/users/:690768bb5f474a50979c1143/status - ::1","service":"injectionlab-backend","timestamp":"2025-11-02T21:11:44.062Z"}
+{"level":"info","message":"PUT /api/admin/users/690768bb5f474a50979c1143/status - ::1","service":"injectionlab-backend","timestamp":"2025-11-02T21:11:59.861Z"}
+{"level":"info","message":"User ParthAbhang status updated to active by admin ParthAbhang","service":"injectionlab-backend","timestamp":"2025-11-02T21:11:59.946Z"}
+{"level":"info","message":"GET /api/admin/users - ::1","service":"injectionlab-backend","timestamp":"2025-11-02T21:12:07.817Z"}
+{"level":"info","message":"PUT /api/admin/users/690768bb5f474a50979c1143/status - ::1","service":"injectionlab-backend","timestamp":"2025-11-02T21:12:16.491Z"}
+{"level":"info","message":"GET /api/admin/users - ::1","service":"injectionlab-backend","timestamp":"2025-11-02T21:12:48.204Z"}
+{"level":"info","message":"PUT /api/admin/users/6907c79d3c90edc3226047b9/status - ::1","service":"injectionlab-backend","timestamp":"2025-11-02T21:13:09.864Z"}
+{"level":"info","message":"User AbhangParth status updated to active by admin ParthAbhang","service":"injectionlab-backend","timestamp":"2025-11-02T21:13:09.952Z"}
+{"level":"info","message":"PUT /api/admin/users/6907c79d3c90edc3226047b9/status - ::1","service":"injectionlab-backend","timestamp":"2025-11-02T21:13:16.141Z"}
+{"level":"info","message":"User AbhangParth status updated to active by admin ParthAbhang","service":"injectionlab-backend","timestamp":"2025-11-02T21:13:16.231Z"}
+{"level":"info","message":"GET /api/admin/users - ::1","service":"injectionlab-backend","timestamp":"2025-11-02T21:13:19.577Z"}
+{"level":"info","message":"PUT /api/admin/users/6907c79d3c90edc3226047b9/status - ::1","service":"injectionlab-backend","timestamp":"2025-11-02T21:13:31.843Z"}
+{"level":"info","message":"User AbhangParth status updated to active by admin ParthAbhang","service":"injectionlab-backend","timestamp":"2025-11-02T21:13:31.907Z"}
+{"level":"info","message":"GET /api/admin/users - ::1","service":"injectionlab-backend","timestamp":"2025-11-02T21:13:35.681Z"}
+{"level":"info","message":"PUT /api/admin/users/690768bb5f474a50979c1143/role - ::1","service":"injectionlab-backend","timestamp":"2025-11-02T21:15:51.798Z"}
+{"level":"info","message":"User ParthAbhang role updated to student by admin ParthAbhang","service":"injectionlab-backend","timestamp":"2025-11-02T21:15:51.890Z"}
+{"level":"info","message":"PUT /api/admin/users/690768bb5f474a50979c1143/role - ::1","service":"injectionlab-backend","timestamp":"2025-11-02T21:16:03.407Z"}
+{"level":"info","message":"PUT /api/admin/users/6907c79d3c90edc3226047b9/role - ::1","service":"injectionlab-backend","timestamp":"2025-11-02T21:16:30.670Z"}
+{"level":"info","message":"User AbhangParth role updated to instructor by admin ParthAbhang","service":"injectionlab-backend","timestamp":"2025-11-02T21:16:30.735Z"}
+{"level":"info","message":"DELETE /api/admin/users/6907c79d3c90edc3226047b9 - ::1","service":"injectionlab-backend","timestamp":"2025-11-02T21:18:10.163Z"}
+{"level":"info","message":"User AbhangParth deleted by admin ParthAbhang","service":"injectionlab-backend","timestamp":"2025-11-02T21:18:10.337Z"}
+{"level":"info","message":"GET /api/admin/users/6907c7bd3c90edc3226047bc/details - ::1","service":"injectionlab-backend","timestamp":"2025-11-02T21:18:42.732Z"}
+{"level":"info","message":"GET /api/admin/users/6907c7bd3c90edc3226047bc/details - ::1","service":"injectionlab-backend","timestamp":"2025-11-02T21:18:58.216Z"}
+{"level":"info","message":"GET /api/admin/users/6907c7bd3c90edc3226047bc/details - ::1","service":"injectionlab-backend","timestamp":"2025-11-02T21:18:59.343Z"}
+{"level":"info","message":"Server running on port 4000","service":"injectionlab-backend","timestamp":"2025-11-03T17:35:46.415Z"}
+{"level":"info","message":"MongoDB Connected: ac-pegu75g-shard-00-02.kamir9w.mongodb.net","service":"injectionlab-backend","timestamp":"2025-11-03T17:35:47.070Z"}
+{"level":"info","message":"GET / - ::1","service":"injectionlab-backend","timestamp":"2025-11-03T17:35:55.288Z"}
