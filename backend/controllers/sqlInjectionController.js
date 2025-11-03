@@ -318,17 +318,24 @@ const getSessionInfo = async (req, res) => {
       success: true,
       session: {
         sessionId: session.sessionId,
-        challenge: session.challengeId,
+        challengeId: session.challengeId._id,  // ✅ Changed from 'challenge' to 'challengeId'
+        status: progress?.status || 'in-progress',
+        score: progress?.score || 0,
+        attempts: progress?.attempts.length || 0,
+        hintsUsed: progress?.hintsUsed || [],
+        queryHistory: session.queries || [],
         createdAt: session.createdAt,
         expiresAt: session.expiresAt,
         queryCount: session.queries.length
       },
-      progress: progress ? {
-        status: progress.status,
-        attempts: progress.attempts.length,
-        score: progress.score,
-        hintsUsed: progress.hintsUsed.length
-      } : null
+      challenge: {  // Return challenge details separately if needed
+        _id: session.challengeId._id,
+        title: session.challengeId.title,
+        description: session.challengeId.description,
+        level: session.challengeId.level,
+        category: session.challengeId.category,
+        difficulty: session.challengeId.difficulty
+      }
     });
 
   } catch (error) {

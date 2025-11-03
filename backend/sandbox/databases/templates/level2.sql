@@ -1,33 +1,17 @@
--- Level 2: Information Disclosure
--- Product search with vulnerable WHERE clause
-
-CREATE TABLE IF NOT EXISTS products (
+CREATE TABLE IF NOT EXISTS users (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    name TEXT NOT NULL,
-    description TEXT,
-    price DECIMAL(10,2),
-    category TEXT,
-    stock INTEGER
+    username TEXT NOT NULL UNIQUE,
+    password TEXT NOT NULL,
+    email TEXT NOT NULL,
+    ssn TEXT,
+    credit_card TEXT,
+    role TEXT DEFAULT 'user',
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE TABLE IF NOT EXISTS customers (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    name TEXT NOT NULL,
-    email TEXT,
-    phone TEXT,
-    address TEXT
-);
-
-INSERT INTO products VALUES
-(1, 'Laptop Pro', 'High-performance laptop', 1299.99, 'electronics', 15),
-(2, 'Wireless Mouse', 'Ergonomic wireless mouse', 29.99, 'electronics', 50),
-(3, 'Office Chair', 'Comfortable office chair', 199.99, 'furniture', 8),
-(4, 'Coffee Mug', 'Ceramic coffee mug', 12.99, 'kitchen', 25);
-
-INSERT INTO customers VALUES
-(1, 'Alice Johnson', 'alice@email.com', '555-0101', '123 Main St'),
-(2, 'Bob Wilson', 'bob@email.com', '555-0102', '456 Oak Ave'),
-(3, 'Carol Brown', 'carol@email.com', '555-0103', '789 Pine Rd');
-
--- The vulnerable query would be:
--- SELECT * FROM products WHERE category = '$category' AND price < $maxPrice
+INSERT INTO users (username, password, email, ssn, credit_card, role) VALUES
+('admin', 'adminSecure2024', 'admin@injectionlab.com', '123-45-6789', '4532-1234-5678-9010', 'admin'),
+('alice', 'alicePass!23', 'alice@example.com', '234-56-7890', '4716-2345-6789-0123', 'user'),
+('charlie', 'charlie@secure', 'charlie@example.com', '345-67-8901', '5412-3456-7890-1234', 'user'),
+('david', 'davidPwd456', 'david@example.com', '456-78-9012', '5512-4567-8901-2345', 'user'),
+('emma', 'emmaPa$$w0rd', 'emma@example.com', '567-89-0123', '4916-5678-9012-3456', 'user');

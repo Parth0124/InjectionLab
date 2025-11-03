@@ -1,7 +1,7 @@
 const express = require('express');
 const { body } = require('express-validator');
-const { register, login, getProfile } = require('../controllers/authController');
-const { authenticate } = require('../middleware/auth');
+const { register, login, getProfile, createPrivilegedUser } = require('../controllers/authController');
+const { authenticate, adminOnly } = require('../middleware/auth');
 
 const router = express.Router();
 
@@ -29,9 +29,22 @@ const loginValidation = [
   body('password').notEmpty().withMessage('Password is required')
 ];
 
-// Routes
+// Privileged user creation validation (includes role)
+const privilegedUserValidation = [
+  ...registerValidation,
+  body('role')
+    .isIn(['instructor', 'admin'])
+    .withMessage('Role must be either "instructor" or "admin"')
+];
+
+// Public routes
 router.post('/register', registerValidation, register);
 router.post('/login', loginValidation, login);
+
+// Protected routes
 router.get('/profile', authenticate, getProfile);
+
+// Admin-only routes
+router.post('/create-privileged-user', authenticate, adminOnly, privilegedUserValidation, createPrivilegedUser);
 
 module.exports = router;

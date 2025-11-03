@@ -3,7 +3,7 @@ const { generateToken } = require('../config/jwt');
 const { validationResult } = require('express-validator');
 const logger = require('../utils/logger');
 
-// signup fn
+// Public signup - always creates student accounts
 const register = async (req, res) => {
   try {
     const errors = validationResult(req);
@@ -29,12 +29,13 @@ const register = async (req, res) => {
       });
     }
 
-    // Create new user
+    // Create new user with student role (ignore any role in request body)
     const user = new User({
       username,
       email,
       password,
-      profile
+      profile,
+      role: 'student' // Always student for public registration
     });
 
     await user.save();
@@ -56,6 +57,78 @@ const register = async (req, res) => {
     res.status(500).json({
       success: false,
       message: 'Server error during registration'
+    });
+  }
+};
+
+// Admin-only function to create privileged accounts
+const createPrivilegedUser = async (req, res) => {
+  try {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({
+        success: false,
+        message: 'Validation errors',
+        errors: errors.array()
+      });
+    }
+
+    // Check if requesting user is admin
+    const requestingUser = await User.findById(req.user.id);
+    
+    if (!requestingUser || requestingUser.role !== 'admin') {
+      return res.status(403).json({
+        success: false,
+        message: 'Only administrators can create instructor or admin accounts'
+      });
+    }
+
+    const { username, email, password, profile, role } = req.body;
+
+    // Validate role
+    if (!role || !['instructor', 'admin'].includes(role)) {
+      return res.status(400).json({
+        success: false,
+        message: 'Role must be either "instructor" or "admin"'
+      });
+    }
+
+    // Check if user already exists
+    const existingUser = await User.findOne({
+      $or: [{ email }, { username }]
+    });
+
+    if (existingUser) {
+      return res.status(400).json({
+        success: false,
+        message: 'User already exists with this email or username'
+      });
+    }
+
+    // Create new privileged user
+    const user = new User({
+      username,
+      email,
+      password,
+      profile,
+      role
+    });
+
+    await user.save();
+
+    logger.info(`Admin ${requestingUser.username} created ${role} account: ${user.username}`);
+
+    res.status(201).json({
+      success: true,
+      message: `${role.charAt(0).toUpperCase() + role.slice(1)} account created successfully`,
+      user
+    });
+
+  } catch (error) {
+    logger.error('Create privileged user error:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Server error during account creation'
     });
   }
 };
@@ -156,5 +229,6 @@ const getProfile = async (req, res) => {
 module.exports = {
   register,
   login,
-  getProfile
+  getProfile,
+  createPrivilegedUser
 };
