@@ -25,7 +25,7 @@ function UserManagement() {
   const fetchUsers = async () => {
     setIsLoading(true);
     try {
-      const response = await getAllUsers(filters);
+      const response = await getUsers(filters);
       setUsers(response.users || []);
     } catch (error) {
       toast.error('Failed to fetch users');

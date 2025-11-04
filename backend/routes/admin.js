@@ -15,16 +15,6 @@ const {
   getSystemLogs
 } = require('../controllers/adminController');
 const { authenticate, authorize } = require('../middleware/auth');
-const {
-  validateUserRoleUpdate,
-  validateUserStatusUpdate,
-  validateChallengeUpdate,
-  validateAchievementCreation,
-  validateMongoId,
-  validatePaginationParams,
-  validateFilterParams
-} = require('../middleware/validation');
-const { createRoleBasedLimiter } = require('../middleware/rateLimit');
 
 const router = express.Router();
 
@@ -32,25 +22,21 @@ const router = express.Router();
 router.use(authenticate);
 router.use(authorize('admin'));
 
-// Apply role-based rate limiting (admins get higher limits)
-const adminLimiter = createRoleBasedLimiter(50, 200, 500); // student, instructor, admin limits
-router.use(adminLimiter);
-
 // User Management Routes
-router.get('/users', validatePaginationParams, validateFilterParams, getAllUsers);
-router.get('/users/:userId', validateMongoId('userId'), getUserDetails);
-router.put('/users/:userId/status', validateMongoId('userId'), validateUserStatusUpdate, updateUserStatus);
-router.put('/users/:userId/role', validateMongoId('userId'), validateUserRoleUpdate, updateUserRole);
-router.delete('/users/:userId', validateMongoId('userId'), deleteUser);
+router.get('/users', getAllUsers);
+router.get('/users/:userId', getUserDetails);
+router.put('/users/:userId/status', updateUserStatus);
+router.put('/users/:userId/role', updateUserRole);
+router.delete('/users/:userId', deleteUser);
 
 // Challenge Management Routes
-router.put('/challenges/:id', validateMongoId('id'), validateChallengeUpdate, updateChallenge);
-router.delete('/challenges/:id', validateMongoId('id'), deleteChallenge);
+router.put('/challenges/:id', updateChallenge);
+router.delete('/challenges/:id', deleteChallenge);
 
 // Achievement Management Routes
 router.get('/achievements', getAllAchievements);
-router.post('/achievements', validateAchievementCreation, createAchievement);
-router.put('/achievements/:id', validateMongoId('id'), updateAchievement);
+router.post('/achievements', createAchievement);
+router.put('/achievements/:id', updateAchievement);
 
 // System Analytics and Statistics
 router.get('/stats', getSystemStats);

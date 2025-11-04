@@ -1,58 +1,58 @@
-import React, { useEffect, useState } from 'react'
-import { getLeaderboard } from '../../api/users'
-import useAuthStore from '../../store/authStore'
-import LoadingSpinner from '../../components/common/LoadingSpinner'
-import toast from 'react-hot-toast'
-import { TrophyIcon, UserIcon } from '@heroicons/react/24/solid'
-import { formatDate } from '../../utils/helpers'
+import React, { useEffect, useState } from "react";
+import { getLeaderboard } from "../../api/users";
+import useAuthStore from "../../store/authStore";
+import LoadingSpinner from "../../components/common/LoadingSpinner";
+import toast from "react-hot-toast";
+import { TrophyIcon, UserIcon } from "@heroicons/react/24/solid";
+import { formatDate } from "../../utils/helpers";
 
 function Leaderboard() {
-  const { user } = useAuthStore()
-  const [leaderboard, setLeaderboard] = useState([])
-  const [isLoading, setIsLoading] = useState(true)
-  const [limit, setLimit] = useState(50)
+  const { user } = useAuthStore();
+  const [leaderboard, setLeaderboard] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [limit, setLimit] = useState(50);
 
   useEffect(() => {
-    fetchLeaderboard()
-  }, [limit])
+    fetchLeaderboard();
+  }, [limit]);
 
   const fetchLeaderboard = async () => {
-    setIsLoading(true)
+    setIsLoading(true);
     try {
-      const response = await getLeaderboard(limit)
+      const response = await getLeaderboard({ limit }); // Pass as object
       if (response.success) {
-        setLeaderboard(response.leaderboard || [])
+        setLeaderboard(response.leaderboard || []);
       } else {
-        toast.error('Failed to load leaderboard')
+        toast.error("Failed to load leaderboard");
       }
     } catch (error) {
-      console.error('Error fetching leaderboard:', error)
-      toast.error('Error loading leaderboard')
+      console.error("Error fetching leaderboard:", error);
+      toast.error("Error loading leaderboard");
     } finally {
-      setIsLoading(false)
+      setIsLoading(false);
     }
-  }
+  };
 
   const getRankColor = (rank) => {
-    if (rank === 1) return 'text-yellow-600'
-    if (rank === 2) return 'text-gray-400'
-    if (rank === 3) return 'text-orange-600'
-    return 'text-gray-600'
-  }
+    if (rank === 1) return "text-yellow-600";
+    if (rank === 2) return "text-gray-400";
+    if (rank === 3) return "text-orange-600";
+    return "text-gray-600";
+  };
 
   const getRankIcon = (rank) => {
     if (rank <= 3) {
-      return <TrophyIcon className={`h-6 w-6 ${getRankColor(rank)}`} />
+      return <TrophyIcon className={`h-6 w-6 ${getRankColor(rank)}`} />;
     }
-    return <span className="text-gray-600 font-semibold">{rank}</span>
-  }
+    return <span className="text-gray-600 font-semibold">{rank}</span>;
+  };
 
   if (isLoading) {
     return (
       <div className="flex justify-center items-center min-h-screen">
         <LoadingSpinner size="lg" />
       </div>
-    )
+    );
   }
 
   return (
@@ -105,7 +105,9 @@ function Leaderboard() {
                     <TrophyIcon className="h-10 w-10 text-yellow-600" />
                   </div>
                 </div>
-                <div className="text-3xl font-bold text-yellow-800 mb-1">1st</div>
+                <div className="text-3xl font-bold text-yellow-800 mb-1">
+                  1st
+                </div>
                 <div className="font-semibold text-gray-900 mb-1 text-lg">
                   {leaderboard[0].username}
                 </div>
@@ -127,7 +129,9 @@ function Leaderboard() {
                     <TrophyIcon className="h-8 w-8 text-orange-600" />
                   </div>
                 </div>
-                <div className="text-2xl font-bold text-orange-800 mb-1">3rd</div>
+                <div className="text-2xl font-bold text-orange-800 mb-1">
+                  3rd
+                </div>
                 <div className="font-semibold text-gray-900 mb-1">
                   {leaderboard[2].username}
                 </div>
@@ -161,7 +165,9 @@ function Leaderboard() {
           {leaderboard.length === 0 ? (
             <div className="text-center py-12 text-gray-500">
               <p>No users on the leaderboard yet.</p>
-              <p className="text-sm mt-2">Be the first to complete challenges and earn points!</p>
+              <p className="text-sm mt-2">
+                Be the first to complete challenges and earn points!
+              </p>
             </div>
           ) : (
             <div className="overflow-x-auto">
@@ -190,13 +196,13 @@ function Leaderboard() {
                 </thead>
                 <tbody className="bg-white divide-y divide-gray-200">
                   {leaderboard.map((entry, index) => {
-                    const rank = index + 1
-                    const isCurrentUser = entry._id === user?._id
-                    
+                    const rank = index + 1;
+                    const isCurrentUser = entry._id === user?._id;
+
                     return (
-                      <tr 
+                      <tr
                         key={entry._id}
-                        className={isCurrentUser ? 'bg-primary-50' : ''}
+                        className={isCurrentUser ? "bg-primary-50" : ""}
                       >
                         <td className="px-6 py-4 whitespace-nowrap">
                           <div className="flex items-center justify-center w-10">
@@ -237,14 +243,14 @@ function Leaderboard() {
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap">
                           <span className="px-2 py-1 text-xs rounded bg-blue-100 text-blue-800">
-                            {entry.profile?.level || 'beginner'}
+                            {entry.profile?.level || "beginner"}
                           </span>
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                           {formatDate(entry.lastLogin || entry.updatedAt)}
                         </td>
                       </tr>
-                    )
+                    );
                   })}
                 </tbody>
               </table>
@@ -260,7 +266,8 @@ function Leaderboard() {
               <div>
                 <div className="text-sm text-gray-600">Your Rank</div>
                 <div className="text-2xl font-bold text-gray-900">
-                  {leaderboard.findIndex(entry => entry._id === user._id) + 1 || 'N/A'}
+                  {leaderboard.findIndex((entry) => entry._id === user._id) +
+                    1 || "N/A"}
                 </div>
               </div>
               <div>
@@ -270,7 +277,9 @@ function Leaderboard() {
                 </div>
               </div>
               <div>
-                <div className="text-sm text-gray-600">Challenges Completed</div>
+                <div className="text-sm text-gray-600">
+                  Challenges Completed
+                </div>
                 <div className="text-2xl font-bold text-green-600">
                   {user.completedChallenges?.length || 0}
                 </div>
@@ -280,7 +289,7 @@ function Leaderboard() {
         )}
       </div>
     </div>
-  )
+  );
 }
 
-export default Leaderboard
+export default Leaderboard;

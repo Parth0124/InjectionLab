@@ -13,7 +13,11 @@ class SQLiteService {
   async createUserDatabase(userId, challengeId, templateName) {
     try {
       const sessionId = uuidv4();
-      const templatePath = path.join(SQLITE_DB_PATH, 'templates', `${templateName}.sql`);
+      
+      // Fix: Handle templateName that may or may not include .sql extension
+      // Remove .sql extension if it exists, then add it back to avoid double extension
+      const cleanTemplateName = templateName.replace(/\.sql$/, '');
+      const templatePath = path.join(SQLITE_DB_PATH, 'templates', `${cleanTemplateName}.sql`);
       const userDbPath = path.join(TEMP_DB_PATH, `${sessionId}.db`);
 
       // Ensure temp directory exists
@@ -24,7 +28,7 @@ class SQLiteService {
 
       // Read and execute template SQL
       const templateSQL = await fs.readFile(templatePath, 'utf8');
-
+      
       await new Promise((resolve, reject) => {
         db.exec(templateSQL, (err) => {
           if (err) reject(err);
@@ -43,9 +47,7 @@ class SQLiteService {
       });
 
       logger.info(`Created user database: ${sessionId} for user: ${userId}`);
-
       return sessionId;
-
     } catch (error) {
       logger.error('Error creating user database:', error);
       throw error;
@@ -55,7 +57,7 @@ class SQLiteService {
   async executeQuery(sessionId, query) {
     try {
       const dbInfo = this.activeDatabases.get(sessionId);
-
+      
       if (!dbInfo) {
         throw new Error('Database session not found or expired');
       }
@@ -69,7 +71,7 @@ class SQLiteService {
 
         dbInfo.db.all(query, (err, rows) => {
           clearTimeout(timeout);
-
+          
           if (err) {
             logger.error(`Query execution error for session ${sessionId}:`, err);
             resolve({
@@ -86,7 +88,6 @@ class SQLiteService {
           }
         });
       });
-
     } catch (error) {
       logger.error('Execute query error:', error);
       throw error;
@@ -96,7 +97,7 @@ class SQLiteService {
   async cleanupDatabase(sessionId) {
     try {
       const dbInfo = this.activeDatabases.get(sessionId);
-
+      
       if (dbInfo) {
         dbInfo.db.close();
         await fs.unlink(dbInfo.path).catch(() => {}); // Ignore errors if file doesn't exist
