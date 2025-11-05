@@ -1,8 +1,24 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import { ShieldCheckIcon, ChartBarIcon, CodeBracketIcon } from '@heroicons/react/24/outline'
+import useAuthStore from '../store/authStore'
 
 function Home() {
+  const navigate = useNavigate()
+  const { isAuthenticated } = useAuthStore()
+
+  // Redirect to dashboard if already logged in
+  useEffect(() => {
+    if (isAuthenticated) {
+      navigate('/dashboard')
+    }
+  }, [isAuthenticated, navigate])
+
+  // Don't render anything while redirecting
+  if (isAuthenticated) {
+    return null
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900">
       {/* Hero Section */}

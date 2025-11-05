@@ -87,6 +87,8 @@ const getUserProgress = async (req, res) => {
 };
 
 // user stats fn
+// BACKEND FIX: Update your controllers/userController.js
+
 const getUserStats = async (req, res) => {
   try {
     const userId = req.user.id;
@@ -102,8 +104,11 @@ const getUserStats = async (req, res) => {
       });
     }
 
-    const progress = await Progress.find({ userId });
-    
+    // ✅ FIX 1: Add .populate() to load challenge details
+    const progress = await Progress.find({ userId })
+      .populate('challengeId', 'title level points difficulty')  // ← ADD THIS!
+      .sort({ updatedAt: -1 });
+
     const stats = {
       totalScore: user.totalScore,
       completedChallenges: user.completedChallenges.length,
@@ -116,8 +121,9 @@ const getUserStats = async (req, res) => {
         level4: user.completedChallenges.filter(c => c.level === 4).length,
         level5: user.completedChallenges.filter(c => c.level === 5).length
       },
+      // ✅ FIX 2: Filter out null/undefined challengeIds
       recentActivity: progress
-        .filter(p => p.status === 'completed')
+        .filter(p => p.status === 'completed' && p.challengeId)  // ← ADD && p.challengeId
         .sort((a, b) => b.completedAt - a.completedAt)
         .slice(0, 5)
         .map(p => ({

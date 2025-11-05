@@ -160,7 +160,7 @@ function SQLPractice() {
 
   if (isLoading) {
     return (
-      <div className="flex justify-center items-center min-h-screen">
+      <div className="flex justify-center items-center min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900">
         <LoadingSpinner size="lg" />
       </div>
     )
@@ -173,26 +173,26 @@ function SQLPractice() {
   const isCompleted = session.status === 'completed'
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
+    <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="flex justify-between items-start mb-6">
           <div className="flex-1">
             <button
               onClick={() => navigate('/challenges')}
-              className="flex items-center text-gray-600 hover:text-gray-900 mb-3"
+              className="flex items-center text-gray-400 hover:text-cyan-400 mb-3 transition-colors duration-200 group"
             >
-              <ChevronLeftIcon className="h-5 w-5 mr-1" />
+              <ChevronLeftIcon className="h-5 w-5 mr-1 group-hover:-translate-x-1 transition-transform duration-200" />
               Back to Challenges
             </button>
-            <h1 className="text-3xl font-bold text-gray-900 mb-2">
+            <h1 className="text-3xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-2">
               {challenge.title}
             </h1>
-            <p className="text-gray-600">{challenge.description}</p>
+            <p className="text-gray-400">{challenge.description}</p>
           </div>
           <button
             onClick={() => setShowEndModal(true)}
-            className="btn-secondary flex items-center ml-4"
+            className="bg-gradient-to-r from-gray-700 to-gray-800 text-white px-6 py-3 rounded-lg font-semibold hover:from-gray-600 hover:to-gray-700 transform hover:scale-105 transition-all duration-200 border border-gray-600 flex items-center ml-4 shadow-lg"
           >
             <XMarkIcon className="h-5 w-5 mr-2" />
             End Session
@@ -201,13 +201,13 @@ function SQLPractice() {
 
         {/* Success Banner */}
         {isCompleted && (
-          <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
+          <div className="bg-gradient-to-r from-green-900/50 to-emerald-900/50 border border-green-700/50 rounded-xl p-5 mb-6 shadow-lg shadow-green-500/20">
             <div className="flex items-center">
-              <CheckCircleIcon className="h-6 w-6 text-green-600 mr-3" />
+              <CheckCircleIcon className="h-7 w-7 text-green-400 mr-3 flex-shrink-0" />
               <div className="flex-1">
-                <h3 className="text-green-900 font-semibold">Challenge Completed!</h3>
-                <p className="text-sm text-green-700">
-                  You've successfully completed this challenge. Final score: {session.score} points
+                <h3 className="text-green-300 font-bold text-lg">Challenge Completed!</h3>
+                <p className="text-sm text-green-400">
+                  You've successfully completed this challenge. Final score: <span className="font-bold">{session.score}</span> points
                 </p>
               </div>
             </div>
@@ -227,8 +227,8 @@ function SQLPractice() {
             />
 
             {/* Query Results */}
-            <div className="card">
-              <h3 className="text-lg font-semibold mb-4">Results</h3>
+            <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-6 border border-gray-700 shadow-xl">
+              <h3 className="text-xl font-bold mb-4 text-white">Results</h3>
               <QueryResults 
                 result={currentResult} 
                 history={queryHistory}
@@ -248,16 +248,16 @@ function SQLPractice() {
 
             {/* Educational Content */}
             {challenge.educationalContent && (
-              <div className="card">
-                <h3 className="text-lg font-semibold mb-4 flex items-center">
-                  <InformationCircleIcon className="h-5 w-5 mr-2 text-blue-600" />
+              <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-6 border border-gray-700 shadow-xl">
+                <h3 className="text-xl font-bold mb-4 flex items-center text-white">
+                  <InformationCircleIcon className="h-6 w-6 mr-2 text-cyan-400" />
                   Learning Resources
                 </h3>
                 
                 {challenge.educationalContent.theory && (
                   <div className="mb-4">
-                    <h4 className="font-medium text-gray-900 mb-2">Theory</h4>
-                    <p className="text-sm text-gray-700">
+                    <h4 className="font-semibold text-cyan-400 mb-2">Theory</h4>
+                    <p className="text-sm text-gray-300 leading-relaxed">
                       {challenge.educationalContent.theory}
                     </p>
                   </div>
@@ -266,10 +266,10 @@ function SQLPractice() {
                 {challenge.educationalContent.examples && 
                  challenge.educationalContent.examples.length > 0 && (
                   <div className="mb-4">
-                    <h4 className="font-medium text-gray-900 mb-2">Examples</h4>
-                    <div className="space-y-1">
+                    <h4 className="font-semibold text-purple-400 mb-2">Examples</h4>
+                    <div className="space-y-2">
                       {challenge.educationalContent.examples.map((example, index) => (
-                        <div key={index} className="text-xs bg-gray-50 p-2 rounded font-mono">
+                        <div key={index} className="text-xs bg-gray-950 p-3 rounded-lg font-mono text-cyan-400 border border-gray-800">
                           {example}
                         </div>
                       ))}
@@ -278,11 +278,11 @@ function SQLPractice() {
                 )}
 
                 {challenge.educationalContent.prevention && (
-                  <div className="bg-green-50 border border-green-200 rounded p-3">
-                    <h4 className="font-medium text-green-900 mb-2 text-sm">
+                  <div className="bg-gradient-to-r from-green-900/40 to-emerald-900/40 border border-green-700/50 rounded-lg p-4">
+                    <h4 className="font-semibold text-green-400 mb-2 text-sm">
                       Prevention
                     </h4>
-                    <p className="text-xs text-green-800">
+                    <p className="text-xs text-green-300 leading-relaxed">
                       {challenge.educationalContent.prevention}
                     </p>
                   </div>
@@ -291,11 +291,11 @@ function SQLPractice() {
             )}
 
             {/* Tips */}
-            <div className="card bg-yellow-50 border-yellow-200">
-              <h3 className="text-sm font-semibold text-yellow-900 mb-2">
+            <div className="bg-gradient-to-br from-yellow-900/40 to-orange-900/40 rounded-2xl p-5 border border-yellow-700/50 shadow-xl">
+              <h3 className="text-sm font-bold text-yellow-400 mb-3">
                 💡 Tips
               </h3>
-              <ul className="text-xs text-yellow-800 space-y-1">
+              <ul className="text-xs text-yellow-200 space-y-2">
                 <li>• Try different SQL injection techniques</li>
                 <li>• Pay attention to error messages</li>
                 <li>• Use comments (--) to bypass parts of queries</li>
@@ -309,40 +309,40 @@ function SQLPractice() {
 
       {/* End Session Modal */}
       {showEndModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white rounded-lg p-6 max-w-md w-full mx-4">
-            <h3 className="text-xl font-semibold mb-4">
+        <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 backdrop-blur-sm">
+          <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-8 max-w-md w-full mx-4 border border-gray-700 shadow-2xl">
+            <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
               {isCompleted ? 'Session Complete!' : 'End Practice Session?'}
             </h3>
-            <p className="text-gray-600 mb-6">
+            <p className="text-gray-300 mb-6 leading-relaxed">
               {isCompleted 
                 ? 'Congratulations on completing this challenge! Your progress has been saved.'
                 : 'Are you sure you want to end this practice session? Your progress will be saved.'}
             </p>
-            <div className="space-y-3">
+            <div className="space-y-3 bg-gray-950/50 rounded-lg p-4 border border-gray-700 mb-6">
               <div className="flex justify-between text-sm">
-                <span className="text-gray-600">Score:</span>
-                <span className="font-semibold">{session.score} points</span>
+                <span className="text-gray-400">Score:</span>
+                <span className="font-bold text-cyan-400">{session.score} points</span>
               </div>
               <div className="flex justify-between text-sm">
-                <span className="text-gray-600">Attempts:</span>
-                <span className="font-semibold">{session.attempts}</span>
+                <span className="text-gray-400">Attempts:</span>
+                <span className="font-bold text-purple-400">{session.attempts}</span>
               </div>
               <div className="flex justify-between text-sm">
-                <span className="text-gray-600">Hints Used:</span>
-                <span className="font-semibold">{session.hintsUsed?.length || 0}</span>
+                <span className="text-gray-400">Hints Used:</span>
+                <span className="font-bold text-pink-400">{session.hintsUsed?.length || 0}</span>
               </div>
             </div>
-            <div className="flex space-x-3 mt-6">
+            <div className="flex space-x-3">
               <button
                 onClick={() => setShowEndModal(false)}
-                className="btn-secondary flex-1"
+                className="bg-gradient-to-r from-gray-700 to-gray-800 text-white px-6 py-3 rounded-lg font-semibold hover:from-gray-600 hover:to-gray-700 transform hover:scale-105 transition-all duration-200 border border-gray-600 flex-1 shadow-lg"
               >
                 Cancel
               </button>
               <button
                 onClick={handleEndSession}
-                className="btn-primary flex-1"
+                className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-cyan-600 hover:to-blue-700 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-cyan-500/50 flex-1"
               >
                 {isCompleted ? 'Return to Dashboard' : 'End Session'}
               </button>

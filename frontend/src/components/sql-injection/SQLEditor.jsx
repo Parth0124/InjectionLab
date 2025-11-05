@@ -81,13 +81,13 @@ function SQLEditor({ onExecute, isExecuting, defaultQuery = '' }) {
 
   return (
     <div className="space-y-4">
-      <div className="card">
+      <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-6 border border-gray-700 shadow-xl">
         <div className="flex justify-between items-center mb-4">
-          <h3 className="text-lg font-semibold">SQL Query Editor</h3>
+          <h3 className="text-xl font-bold text-white">SQL Query Editor</h3>
           <div className="flex space-x-2">
             <button
               onClick={handleClear}
-              className="btn-secondary flex items-center text-sm"
+              className="bg-gradient-to-r from-gray-700 to-gray-800 text-white px-4 py-2 rounded-lg font-semibold hover:from-gray-600 hover:to-gray-700 transform hover:scale-105 transition-all duration-200 border border-gray-600 flex items-center text-sm shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
               disabled={isExecuting}
             >
               <ArrowPathIcon className="h-4 w-4 mr-1" />
@@ -96,7 +96,7 @@ function SQLEditor({ onExecute, isExecuting, defaultQuery = '' }) {
             <button
               onClick={handleExecute}
               disabled={!query.trim() || isExecuting}
-              className="btn-primary flex items-center text-sm"
+              className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:from-cyan-600 hover:to-blue-700 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-cyan-500/50 flex items-center text-sm disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
             >
               {isExecuting ? (
                 <>
@@ -113,7 +113,7 @@ function SQLEditor({ onExecute, isExecuting, defaultQuery = '' }) {
           </div>
         </div>
 
-        <div className="border rounded-lg overflow-hidden" onKeyDown={handleKeyDown}>
+        <div className="border border-gray-700 rounded-xl overflow-hidden shadow-inner" onKeyDown={handleKeyDown}>
           <Editor
             height="200px"
             defaultLanguage="sql"
@@ -136,31 +136,31 @@ function SQLEditor({ onExecute, isExecuting, defaultQuery = '' }) {
           />
         </div>
 
-        <div className="mt-3 p-3 bg-blue-50 rounded-lg">
-          <p className="text-xs text-blue-900 mb-2">
-            <strong>Tip:</strong> Try different SQL injection techniques to bypass authentication or extract data.
+        <div className="mt-4 p-4 bg-gradient-to-r from-cyan-900/40 to-blue-900/40 rounded-xl border border-cyan-700/50">
+          <p className="text-xs text-cyan-200 mb-2">
+            <strong className="text-cyan-400">Tip:</strong> Try different SQL injection techniques to bypass authentication or extract data.
           </p>
-          <p className="text-xs text-blue-700">
-            Press <kbd className="px-1 py-0.5 bg-blue-200 rounded text-xs">Ctrl</kbd> + <kbd className="px-1 py-0.5 bg-blue-200 rounded text-xs">Enter</kbd> to execute
+          <p className="text-xs text-cyan-300">
+            Press <kbd className="px-2 py-1 bg-cyan-700 rounded text-xs font-mono">Ctrl</kbd> + <kbd className="px-2 py-1 bg-cyan-700 rounded text-xs font-mono">Enter</kbd> to execute
           </p>
         </div>
       </div>
 
       {/* Sample Queries */}
-      <div className="card">
-        <h4 className="text-sm font-semibold mb-3">Sample Queries</h4>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+      <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-6 border border-gray-700 shadow-xl">
+        <h4 className="text-lg font-bold mb-4 text-white">Sample Queries</h4>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           {sampleQueries.map((sample, index) => (
             <button
               key={index}
               onClick={() => insertSampleQuery(sample.query)}
               disabled={isExecuting}
-              className="text-left p-3 border rounded-lg hover:border-primary-300 hover:bg-primary-50 transition-colors"
+              className="text-left p-4 border border-gray-700 rounded-xl hover:border-cyan-500 hover:bg-gray-800/50 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed group"
             >
-              <div className="text-sm font-medium text-gray-900 mb-1">
+              <div className="text-sm font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">
                 {sample.label}
               </div>
-              <div className="text-xs text-gray-600 font-mono bg-gray-50 p-1 rounded">
+              <div className="text-xs text-cyan-400 font-mono bg-gray-950 p-2 rounded border border-gray-800">
                 {sample.query}
               </div>
             </button>
@@ -169,15 +169,15 @@ function SQLEditor({ onExecute, isExecuting, defaultQuery = '' }) {
       </div>
 
       {/* SQL Injection Tips */}
-      <div className="card bg-yellow-50 border-yellow-200">
-        <h4 className="text-sm font-semibold text-yellow-900 mb-2">
+      <div className="bg-gradient-to-br from-yellow-900/40 to-orange-900/40 rounded-2xl p-5 border border-yellow-700/50 shadow-xl">
+        <h4 className="text-sm font-bold text-yellow-400 mb-3">
           Common SQL Injection Techniques
         </h4>
-        <ul className="text-xs text-yellow-800 space-y-1">
-          <li>• Use <code className="bg-yellow-200 px-1 rounded">OR '1'='1'</code> to make conditions always true</li>
-          <li>• Use <code className="bg-yellow-200 px-1 rounded">--</code> or <code className="bg-yellow-200 px-1 rounded">/* */</code> to comment out rest of query</li>
-          <li>• Use <code className="bg-yellow-200 px-1 rounded">UNION</code> to combine results from multiple tables</li>
-          <li>• Try closing quotes with <code className="bg-yellow-200 px-1 rounded">'</code> or <code className="bg-yellow-200 px-1 rounded">"</code></li>
+        <ul className="text-xs text-yellow-200 space-y-2">
+          <li>• Use <code className="bg-yellow-700/50 px-2 py-0.5 rounded font-mono">OR '1'='1'</code> to make conditions always true</li>
+          <li>• Use <code className="bg-yellow-700/50 px-2 py-0.5 rounded font-mono">--</code> or <code className="bg-yellow-700/50 px-2 py-0.5 rounded font-mono">/* */</code> to comment out rest of query</li>
+          <li>• Use <code className="bg-yellow-700/50 px-2 py-0.5 rounded font-mono">UNION</code> to combine results from multiple tables</li>
+          <li>• Try closing quotes with <code className="bg-yellow-700/50 px-2 py-0.5 rounded font-mono">'</code> or <code className="bg-yellow-700/50 px-2 py-0.5 rounded font-mono">"</code></li>
           <li>• Experiment with different quote types and combinations</li>
         </ul>
       </div>

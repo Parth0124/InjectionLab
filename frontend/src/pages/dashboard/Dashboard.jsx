@@ -43,6 +43,7 @@ function Dashboard() {
       }
 
       if (statsRes.success) {
+        console.log('Stats from backend:', statsRes.stats);
         setStats(statsRes.stats);
       }
 
@@ -59,7 +60,7 @@ function Dashboard() {
 
   if (isLoading) {
     return (
-      <div className="flex justify-center items-center min-h-screen">
+      <div className="flex justify-center items-center min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900">
         <LoadingSpinner size="lg" />
       </div>
     );
@@ -79,19 +80,18 @@ function Dashboard() {
     .slice(0, 3);
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
+    <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Welcome Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900">
+          <h1 className="text-4xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
             Welcome back, {user?.username}!
           </h1>
-          <p className="mt-2 text-gray-600">
+          <p className="mt-2 text-lg text-gray-400">
             Track your progress and continue learning SQL injection techniques
           </p>
         </div>
 
-        {/* Stats Cards */}
         {/* Stats Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
           <StatsCard
@@ -131,25 +131,20 @@ function Dashboard() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
           {/* Progress Chart */}
           <div className="lg:col-span-2">
-            <div className="card">
+            <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-6 border border-gray-700 shadow-xl">
               <div className="flex items-center justify-between mb-6">
-                <h2 className="text-xl font-semibold">Your Progress</h2>
-                <ChartBarIcon className="h-6 w-6 text-gray-400" />
+                <h2 className="text-2xl font-bold text-white">Your Progress</h2>
+                <ChartBarIcon className="h-6 w-6 text-cyan-400" />
               </div>
-              {progress?.challengesByDifficulty ? (
-                <ProgressChart data={progress.challengesByDifficulty} />
-              ) : (
-                <div className="text-center py-12 text-gray-500">
-                  Start completing challenges to see your progress!
-                </div>
-              )}
+              {/* Pass stats.levelDistribution to ProgressChart */}
+              <ProgressChart data={stats?.levelDistribution} />
             </div>
           </div>
 
           {/* Quick Stats */}
           <div className="space-y-6">
-            <div className="card">
-              <h3 className="text-lg font-semibold mb-4">
+            <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-6 border border-gray-700 shadow-xl">
+              <h3 className="text-xl font-bold mb-4 text-white">
                 Recent Achievements
               </h3>
               {user?.achievements && user.achievements.length > 0 ? (
@@ -157,14 +152,14 @@ function Dashboard() {
                   {user.achievements.slice(0, 3).map((achievement, index) => (
                     <div
                       key={index}
-                      className="flex items-center p-3 bg-yellow-50 rounded-lg"
+                      className="flex items-center p-3 bg-gradient-to-r from-yellow-900/40 to-orange-900/40 rounded-lg border border-yellow-700/50"
                     >
-                      <TrophyIcon className="h-8 w-8 text-yellow-600 mr-3" />
+                      <TrophyIcon className="h-8 w-8 text-yellow-400 mr-3" />
                       <div>
-                        <div className="font-medium text-gray-900">
+                        <div className="font-semibold text-white">
                           {achievement.name}
                         </div>
-                        <div className="text-xs text-gray-600">
+                        <div className="text-xs text-gray-400">
                           {achievement.description}
                         </div>
                       </div>
@@ -172,22 +167,22 @@ function Dashboard() {
                   ))}
                 </div>
               ) : (
-                <p className="text-sm text-gray-500">
+                <p className="text-sm text-gray-400">
                   Complete challenges to earn achievements!
                 </p>
               )}
             </div>
 
-            <div className="card bg-primary-50 border-primary-200">
-              <h3 className="text-lg font-semibold mb-2">Keep Going!</h3>
-              <p className="text-sm text-gray-700 mb-4">
+            <div className="bg-gradient-to-br from-cyan-900/40 to-purple-900/40 rounded-2xl p-6 border border-cyan-700/50 shadow-xl">
+              <h3 className="text-xl font-bold mb-2 text-white">Keep Going!</h3>
+              <p className="text-sm text-gray-300 mb-4">
                 You're making great progress. Complete{" "}
                 {totalChallenges - completedCount} more challenges to master SQL
                 injection!
               </p>
               <button
                 onClick={() => navigate("/challenges")}
-                className="btn-primary w-full"
+                className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-cyan-600 hover:to-blue-700 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-cyan-500/50 w-full"
               >
                 Browse Challenges
               </button>
@@ -196,12 +191,12 @@ function Dashboard() {
         </div>
 
         {/* Recommended Challenges */}
-        <div className="card mb-8">
+        <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-6 border border-gray-700 shadow-xl mb-8">
           <div className="flex items-center justify-between mb-6">
-            <h2 className="text-xl font-semibold">Recommended for You</h2>
+            <h2 className="text-2xl font-bold text-white">Recommended for You</h2>
             <button
               onClick={() => navigate("/challenges")}
-              className="text-primary-600 hover:text-primary-700 text-sm font-medium"
+              className="text-cyan-400 hover:text-cyan-300 text-sm font-semibold transition-colors duration-200 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.5)]"
             >
               View All →
             </button>
@@ -212,38 +207,38 @@ function Dashboard() {
               {recommendedChallenges.map((challenge) => (
                 <div
                   key={challenge._id}
-                  className="border rounded-lg p-4 hover:border-primary-300 hover:shadow-md transition-all cursor-pointer"
+                  className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700 rounded-xl p-5 hover:border-cyan-500 hover:shadow-lg hover:shadow-cyan-500/20 transition-all duration-300 cursor-pointer transform hover:-translate-y-1"
                   onClick={() => navigate(`/challenges/${challenge._id}`)}
                 >
                   <div className="flex justify-between items-start mb-3">
                     <span
-                      className={`px-2 py-1 text-xs rounded ${
+                      className={`px-3 py-1 text-xs font-bold rounded-full ${
                         challenge.difficulty === "easy"
-                          ? "bg-green-100 text-green-800"
+                          ? "bg-gradient-to-r from-green-500 to-emerald-600 text-white shadow-lg shadow-green-500/30"
                           : challenge.difficulty === "medium"
-                          ? "bg-yellow-100 text-yellow-800"
+                          ? "bg-gradient-to-r from-yellow-500 to-orange-500 text-white shadow-lg shadow-yellow-500/30"
                           : challenge.difficulty === "hard"
-                          ? "bg-orange-100 text-orange-800"
-                          : "bg-red-100 text-red-800"
+                          ? "bg-gradient-to-r from-orange-500 to-red-600 text-white shadow-lg shadow-orange-500/30"
+                          : "bg-gradient-to-r from-red-500 to-rose-600 text-white shadow-lg shadow-red-500/30"
                       }`}
                     >
                       {challenge.difficulty}
                     </span>
-                    <span className="text-primary-600 font-semibold">
+                    <span className="text-cyan-400 font-bold">
                       {challenge.points} pts
                     </span>
                   </div>
-                  <h3 className="font-semibold text-gray-900 mb-2">
+                  <h3 className="font-bold text-white mb-2 text-lg">
                     {challenge.title}
                   </h3>
-                  <p className="text-sm text-gray-600 mb-3 line-clamp-2">
+                  <p className="text-sm text-gray-400 mb-3 line-clamp-2">
                     {challenge.description}
                   </p>
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs text-gray-500">
+                  <div className="flex items-center justify-between pt-3 border-t border-gray-700">
+                    <span className="text-xs text-gray-500 font-semibold">
                       Level {challenge.level}
                     </span>
-                    <button className="text-primary-600 hover:text-primary-700 text-sm font-medium flex items-center">
+                    <button className="text-cyan-400 hover:text-cyan-300 text-sm font-semibold flex items-center transition-colors duration-200">
                       <PlayIcon className="h-4 w-4 mr-1" />
                       Start
                     </button>
@@ -253,12 +248,12 @@ function Dashboard() {
             </div>
           ) : (
             <div className="text-center py-8">
-              <p className="text-gray-600 mb-4">
+              <p className="text-gray-300 mb-4 text-lg">
                 🎉 Congratulations! You've completed all available challenges!
               </p>
               <button
                 onClick={() => navigate("/leaderboard")}
-                className="btn-primary"
+                className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-cyan-600 hover:to-blue-700 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-cyan-500/50"
               >
                 View Leaderboard
               </button>
@@ -267,9 +262,10 @@ function Dashboard() {
         </div>
 
         {/* Recent Activity */}
-        <div className="card">
-          <h2 className="text-xl font-semibold mb-6">Recent Activity</h2>
-          <RecentActivity activities={progress?.recentActivity || []} />
+        <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-6 border border-gray-700 shadow-xl">
+          <h2 className="text-2xl font-bold mb-6 text-white">Recent Activity</h2>
+          {/* Pass stats.recentActivity to RecentActivity component */}
+          <RecentActivity activities={stats.recentActivity} />
         </div>
       </div>
     </div>

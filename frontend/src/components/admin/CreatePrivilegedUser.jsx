@@ -33,54 +33,54 @@ function CreatePrivilegedUser({ isOpen, onClose, onSuccess }) {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-      <div className="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
-        <div className="sticky top-0 bg-white border-b px-6 py-4 flex justify-between items-center">
-          <h2 className="text-xl font-bold text-gray-900">
+    <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 p-4 backdrop-blur-sm">
+      <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto border border-gray-700 shadow-2xl">
+        <div className="sticky top-0 bg-gradient-to-r from-gray-800 to-gray-900 border-b border-gray-700 px-6 py-4 flex justify-between items-center rounded-t-2xl">
+          <h2 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
             Create Instructor/Admin Account
           </h2>
           <button
             onClick={onClose}
-            className="text-gray-400 hover:text-gray-600"
+            className="text-gray-400 hover:text-white transition-colors duration-200 hover:bg-gray-700 rounded-lg p-1"
           >
-            <XIcon className="h-6 w-6" />
+            <XMarkIcon className="h-6 w-6" />
           </button>
         </div>
 
-        <form onSubmit={handleSubmit(onSubmit)} className="p-6 space-y-4">
+        <form onSubmit={handleSubmit(onSubmit)} className="p-6 space-y-5">
           {/* Role Selection */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-semibold text-gray-300 mb-3">
               Account Type *
             </label>
             <div className="flex space-x-4">
-              <label className="flex items-center">
+              <label className="flex items-center px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-lg cursor-pointer hover:border-cyan-500 transition-all duration-200 has-[:checked]:border-cyan-500 has-[:checked]:bg-cyan-900/20">
                 <input
                   {...register('role', { required: 'Role is required' })}
                   type="radio"
                   value="instructor"
-                  className="mr-2"
+                  className="mr-3 text-cyan-500 focus:ring-cyan-500"
                 />
-                <span className="text-sm">Instructor</span>
+                <span className="text-sm font-semibold text-white">Instructor</span>
               </label>
-              <label className="flex items-center">
+              <label className="flex items-center px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-lg cursor-pointer hover:border-purple-500 transition-all duration-200 has-[:checked]:border-purple-500 has-[:checked]:bg-purple-900/20">
                 <input
                   {...register('role', { required: 'Role is required' })}
                   type="radio"
                   value="admin"
-                  className="mr-2"
+                  className="mr-3 text-purple-500 focus:ring-purple-500"
                 />
-                <span className="text-sm">Admin</span>
+                <span className="text-sm font-semibold text-white">Admin</span>
               </label>
             </div>
             {errors.role && (
-              <p className="mt-1 text-sm text-red-600">{errors.role.message}</p>
+              <p className="mt-2 text-sm text-red-400">{errors.role.message}</p>
             )}
           </div>
 
           {/* Username */}
           <div>
-            <label htmlFor="username" className="block text-sm font-medium text-gray-700">
+            <label htmlFor="username" className="block text-sm font-semibold text-gray-300 mb-2">
               Username *
             </label>
             <input
@@ -100,17 +100,17 @@ function CreatePrivilegedUser({ isOpen, onClose, onSuccess }) {
                 }
               })}
               type="text"
-              className="mt-1 input-field"
+              className="w-full px-4 py-2 bg-gray-900 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all duration-200"
               placeholder="prof_smith"
             />
             {errors.username && (
-              <p className="mt-1 text-sm text-red-600">{errors.username.message}</p>
+              <p className="mt-2 text-sm text-red-400">{errors.username.message}</p>
             )}
           </div>
 
           {/* Email */}
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+            <label htmlFor="email" className="block text-sm font-semibold text-gray-300 mb-2">
               Email Address *
             </label>
             <input
@@ -122,17 +122,17 @@ function CreatePrivilegedUser({ isOpen, onClose, onSuccess }) {
                 }
               })}
               type="email"
-              className="mt-1 input-field"
+              className="w-full px-4 py-2 bg-gray-900 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all duration-200"
               placeholder="prof.smith@university.com"
             />
             {errors.email && (
-              <p className="mt-1 text-sm text-red-600">{errors.email.message}</p>
+              <p className="mt-2 text-sm text-red-400">{errors.email.message}</p>
             )}
           </div>
 
           {/* Password */}
           <div>
-            <label htmlFor="password" className="block text-sm font-medium text-gray-700">
+            <label htmlFor="password" className="block text-sm font-semibold text-gray-300 mb-2">
               Password *
             </label>
             <input
@@ -148,81 +148,55 @@ function CreatePrivilegedUser({ isOpen, onClose, onSuccess }) {
                 }
               })}
               type="password"
-              className="mt-1 input-field"
+              className="w-full px-4 py-2 bg-gray-900 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all duration-200"
             />
             {errors.password && (
-              <p className="mt-1 text-sm text-red-600">{errors.password.message}</p>
+              <p className="mt-2 text-sm text-red-400">{errors.password.message}</p>
             )}
           </div>
 
           {/* Profile Fields */}
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <label htmlFor="firstName" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="firstName" className="block text-sm font-semibold text-gray-300 mb-2">
                 First Name
               </label>
               <input
                 {...register('profile.firstName')}
                 type="text"
-                className="mt-1 input-field"
+                className="w-full px-4 py-2 bg-gray-900 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all duration-200"
                 placeholder="John"
               />
             </div>
             <div>
-              <label htmlFor="lastName" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="lastName" className="block text-sm font-semibold text-gray-300 mb-2">
                 Last Name
               </label>
               <input
                 {...register('profile.lastName')}
                 type="text"
-                className="mt-1 input-field"
+                className="w-full px-4 py-2 bg-gray-900 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all duration-200"
                 placeholder="Doe"
               />
             </div>
           </div>
 
-          <div>
-            <label htmlFor="institution" className="block text-sm font-medium text-gray-700">
-              Institution
-            </label>
-            <input
-              {...register('profile.institution')}
-              type="text"
-              className="mt-1 input-field"
-              placeholder="University Name"
-            />
-          </div>
-
-          <div>
-            <label htmlFor="level" className="block text-sm font-medium text-gray-700">
-              Experience Level
-            </label>
-            <select
-              {...register('profile.level')}
-              className="mt-1 input-field"
-            >
-              <option value="beginner">Beginner</option>
-              <option value="intermediate">Intermediate</option>
-              <option value="advanced">Advanced</option>
-            </select>
-          </div>
-
           {/* Submit Buttons */}
-          <div className="flex justify-end space-x-3 pt-4">
+          <div className="flex justify-end space-x-3 pt-6 border-t border-gray-700">
             <button
               type="button"
               onClick={onClose}
-              className="btn-secondary"
+              className="bg-gradient-to-r from-gray-700 to-gray-800 text-white px-6 py-3 rounded-lg font-semibold hover:from-gray-600 hover:to-gray-700 transform hover:scale-105 transition-all duration-200 border border-gray-600 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
               disabled={isLoading}
             >
               Cancel
             </button>
             <button
               type="submit"
-              className="btn-primary"
+              className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-cyan-600 hover:to-blue-700 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-cyan-500/50 flex items-center disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
               disabled={isLoading}
             >
-              {isLoading ? <LoadingSpinner size="sm" /> : 'Create Account'}
+              {isLoading ? <><LoadingSpinner size="sm" /><span className="ml-2">Creating...</span></> : 'Create Account'}
             </button>
           </div>
         </form>

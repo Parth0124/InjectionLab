@@ -12,13 +12,13 @@ import { LineChart, Line, BarChart, Bar, PieChart, Pie, Cell, XAxis, YAxis, Cart
 function SystemStats({ stats }) {
   if (!stats) {
     return (
-      <div className="text-center py-8 text-gray-500">
+      <div className="text-center py-8 text-gray-400">
         Loading system statistics...
       </div>
     )
   }
 
-  const COLORS = ['#3b82f6', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6']
+  const COLORS = ['#06b6d4', '#8b5cf6', '#ec4899', '#f59e0b', '#10b981']
 
   // Prepare data for charts
   const usersByRoleData = stats.usersByRole ? Object.entries(stats.usersByRole).map(([role, count]) => ({
@@ -37,73 +37,73 @@ function SystemStats({ stats }) {
     <div className="space-y-6">
       {/* Overview Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div className="card">
+        <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 border border-gray-700 shadow-xl hover:border-cyan-500 hover:shadow-cyan-500/20 transition-all duration-300">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm font-medium text-gray-600">Total Users</p>
-              <p className="text-3xl font-bold text-gray-900 mt-2">
+              <p className="text-sm font-semibold text-gray-400">Total Users</p>
+              <p className="text-3xl font-bold text-white mt-2">
                 {stats.totalUsers || 0}
               </p>
-              <p className="text-sm text-green-600 mt-2 flex items-center">
+              <p className="text-sm text-green-400 mt-2 flex items-center font-semibold">
                 <ArrowTrendingUpIcon className="h-4 w-4 mr-1" />
                 {stats.activeUsers || 0} active
               </p>
             </div>
-            <div className="p-3 bg-blue-100 rounded-lg">
-              <UsersIcon className="h-8 w-8 text-blue-600" />
+            <div className="p-3 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg shadow-lg shadow-cyan-500/30">
+              <UsersIcon className="h-8 w-8 text-white" />
             </div>
           </div>
         </div>
 
-        <div className="card">
+        <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 border border-gray-700 shadow-xl hover:border-purple-500 hover:shadow-purple-500/20 transition-all duration-300">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm font-medium text-gray-600">Total Challenges</p>
-              <p className="text-3xl font-bold text-gray-900 mt-2">
+              <p className="text-sm font-semibold text-gray-400">Total Challenges</p>
+              <p className="text-3xl font-bold text-white mt-2">
                 {stats.totalChallenges || 0}
               </p>
-              <p className="text-sm text-green-600 mt-2 flex items-center">
+              <p className="text-sm text-green-400 mt-2 flex items-center font-semibold">
                 <CheckCircleIcon className="h-4 w-4 mr-1" />
                 {stats.activeChallenges || 0} active
               </p>
             </div>
-            <div className="p-3 bg-purple-100 rounded-lg">
-              <AcademicCapIcon className="h-8 w-8 text-purple-600" />
+            <div className="p-3 bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg shadow-lg shadow-purple-500/30">
+              <AcademicCapIcon className="h-8 w-8 text-white" />
             </div>
           </div>
         </div>
 
-        <div className="card">
+        <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 border border-gray-700 shadow-xl hover:border-green-500 hover:shadow-green-500/20 transition-all duration-300">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm font-medium text-gray-600">Total Sessions</p>
-              <p className="text-3xl font-bold text-gray-900 mt-2">
+              <p className="text-sm font-semibold text-gray-400">Total Sessions</p>
+              <p className="text-3xl font-bold text-white mt-2">
                 {stats.totalSessions || 0}
               </p>
-              <p className="text-sm text-blue-600 mt-2 flex items-center">
+              <p className="text-sm text-blue-400 mt-2 flex items-center font-semibold">
                 <ClockIcon className="h-4 w-4 mr-1" />
                 {stats.activeSessions || 0} active
               </p>
             </div>
-            <div className="p-3 bg-green-100 rounded-lg">
-              <ChartBarIcon className="h-8 w-8 text-green-600" />
+            <div className="p-3 bg-gradient-to-br from-green-500 to-emerald-600 rounded-lg shadow-lg shadow-green-500/30">
+              <ChartBarIcon className="h-8 w-8 text-white" />
             </div>
           </div>
         </div>
 
-        <div className="card">
+        <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 border border-gray-700 shadow-xl hover:border-yellow-500 hover:shadow-yellow-500/20 transition-all duration-300">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm font-medium text-gray-600">Success Rate</p>
-              <p className="text-3xl font-bold text-gray-900 mt-2">
+              <p className="text-sm font-semibold text-gray-400">Success Rate</p>
+              <p className="text-3xl font-bold text-white mt-2">
                 {stats.overallSuccessRate ? `${stats.overallSuccessRate.toFixed(1)}%` : '0%'}
               </p>
-              <p className="text-sm text-gray-600 mt-2">
+              <p className="text-sm text-gray-400 mt-2">
                 {stats.totalCompletions || 0} completions
               </p>
             </div>
-            <div className="p-3 bg-yellow-100 rounded-lg">
-              <ArrowTrendingUpIcon className="h-8 w-8 text-yellow-600" />
+            <div className="p-3 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-lg shadow-lg shadow-yellow-500/30">
+              <ArrowTrendingUpIcon className="h-8 w-8 text-white" />
             </div>
           </div>
         </div>
@@ -112,8 +112,8 @@ function SystemStats({ stats }) {
       {/* Charts Row */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Users by Role */}
-        <div className="card">
-          <h3 className="text-lg font-semibold mb-4">Users by Role</h3>
+        <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-6 border border-gray-700 shadow-xl">
+          <h3 className="text-xl font-bold mb-4 text-white">Users by Role</h3>
           {usersByRoleData.length > 0 ? (
             <ResponsiveContainer width="100%" height={300}>
               <PieChart>
@@ -131,46 +131,46 @@ function SystemStats({ stats }) {
                     <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                   ))}
                 </Pie>
-                <Tooltip />
+                <Tooltip contentStyle={{ backgroundColor: '#1f2937', border: '1px solid #374151', borderRadius: '8px', color: '#fff' }} />
               </PieChart>
             </ResponsiveContainer>
           ) : (
-            <p className="text-center text-gray-500 py-8">No user data available</p>
+            <p className="text-center text-gray-400 py-8">No user data available</p>
           )}
         </div>
 
         {/* Challenges by Difficulty */}
-        <div className="card">
-          <h3 className="text-lg font-semibold mb-4">Challenges by Difficulty</h3>
+        <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-6 border border-gray-700 shadow-xl">
+          <h3 className="text-xl font-bold mb-4 text-white">Challenges by Difficulty</h3>
           {challengesByDifficultyData.length > 0 ? (
             <ResponsiveContainer width="100%" height={300}>
               <BarChart data={challengesByDifficultyData}>
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="name" />
-                <YAxis />
-                <Tooltip />
-                <Bar dataKey="value" fill="#3b82f6" />
+                <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
+                <XAxis dataKey="name" stroke="#9ca3af" />
+                <YAxis stroke="#9ca3af" />
+                <Tooltip contentStyle={{ backgroundColor: '#1f2937', border: '1px solid #374151', borderRadius: '8px', color: '#fff' }} />
+                <Bar dataKey="value" fill="#06b6d4" />
               </BarChart>
             </ResponsiveContainer>
           ) : (
-            <p className="text-center text-gray-500 py-8">No challenge data available</p>
+            <p className="text-center text-gray-400 py-8">No challenge data available</p>
           )}
         </div>
       </div>
 
       {/* Activity Timeline */}
       {recentActivityData.length > 0 && (
-        <div className="card">
-          <h3 className="text-lg font-semibold mb-4">Recent Activity</h3>
+        <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-6 border border-gray-700 shadow-xl">
+          <h3 className="text-xl font-bold mb-4 text-white">Recent Activity</h3>
           <ResponsiveContainer width="100%" height={300}>
             <LineChart data={recentActivityData}>
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="date" />
-              <YAxis />
-              <Tooltip />
+              <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
+              <XAxis dataKey="date" stroke="#9ca3af" />
+              <YAxis stroke="#9ca3af" />
+              <Tooltip contentStyle={{ backgroundColor: '#1f2937', border: '1px solid #374151', borderRadius: '8px', color: '#fff' }} />
               <Legend />
-              <Line type="monotone" dataKey="sessions" stroke="#3b82f6" name="Sessions" />
-              <Line type="monotone" dataKey="completions" stroke="#10b981" name="Completions" />
+              <Line type="monotone" dataKey="sessions" stroke="#06b6d4" name="Sessions" strokeWidth={2} />
+              <Line type="monotone" dataKey="completions" stroke="#10b981" name="Completions" strokeWidth={2} />
             </LineChart>
           </ResponsiveContainer>
         </div>
@@ -178,32 +178,32 @@ function SystemStats({ stats }) {
 
       {/* Additional Stats */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="card">
-          <h4 className="text-sm font-medium text-gray-600 mb-2">Top Challenge Category</h4>
-          <p className="text-xl font-bold text-gray-900">
+        <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 border border-gray-700 shadow-xl hover:border-cyan-500 transition-all duration-300">
+          <h4 className="text-sm font-semibold text-gray-400 mb-2">Top Challenge Category</h4>
+          <p className="text-2xl font-bold text-cyan-400">
             {stats.topCategory || 'N/A'}
           </p>
-          <p className="text-sm text-gray-600 mt-1">
+          <p className="text-sm text-gray-400 mt-1">
             {stats.topCategoryCount || 0} attempts
           </p>
         </div>
 
-        <div className="card">
-          <h4 className="text-sm font-medium text-gray-600 mb-2">Average Session Duration</h4>
-          <p className="text-xl font-bold text-gray-900">
+        <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 border border-gray-700 shadow-xl hover:border-purple-500 transition-all duration-300">
+          <h4 className="text-sm font-semibold text-gray-400 mb-2">Average Session Duration</h4>
+          <p className="text-2xl font-bold text-purple-400">
             {stats.avgSessionDuration ? `${stats.avgSessionDuration.toFixed(1)} min` : 'N/A'}
           </p>
-          <p className="text-sm text-gray-600 mt-1">
+          <p className="text-sm text-gray-400 mt-1">
             Per practice session
           </p>
         </div>
 
-        <div className="card">
-          <h4 className="text-sm font-medium text-gray-600 mb-2">Total Hints Used</h4>
-          <p className="text-xl font-bold text-gray-900">
+        <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 border border-gray-700 shadow-xl hover:border-pink-500 transition-all duration-300">
+          <h4 className="text-sm font-semibold text-gray-400 mb-2">Total Hints Used</h4>
+          <p className="text-2xl font-bold text-pink-400">
             {stats.totalHintsUsed || 0}
           </p>
-          <p className="text-sm text-gray-600 mt-1">
+          <p className="text-sm text-gray-400 mt-1">
             Across all sessions
           </p>
         </div>
@@ -211,35 +211,35 @@ function SystemStats({ stats }) {
 
       {/* Most Active Users */}
       {stats.mostActiveUsers && stats.mostActiveUsers.length > 0 && (
-        <div className="card">
-          <h3 className="text-lg font-semibold mb-4">Most Active Users (Last 7 Days)</h3>
+        <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-6 border border-gray-700 shadow-xl">
+          <h3 className="text-xl font-bold mb-6 text-white">Most Active Users (Last 7 Days)</h3>
           <div className="overflow-x-auto">
-            <table className="min-w-full divide-y divide-gray-200">
-              <thead className="bg-gray-50">
+            <table className="min-w-full divide-y divide-gray-700">
+              <thead>
                 <tr>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Rank</th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Username</th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Sessions</th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Completions</th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Score</th>
+                  <th className="px-6 py-3 text-left text-xs font-bold text-cyan-400 uppercase">Rank</th>
+                  <th className="px-6 py-3 text-left text-xs font-bold text-cyan-400 uppercase">Username</th>
+                  <th className="px-6 py-3 text-left text-xs font-bold text-cyan-400 uppercase">Sessions</th>
+                  <th className="px-6 py-3 text-left text-xs font-bold text-cyan-400 uppercase">Completions</th>
+                  <th className="px-6 py-3 text-left text-xs font-bold text-cyan-400 uppercase">Score</th>
                 </tr>
               </thead>
-              <tbody className="bg-white divide-y divide-gray-200">
+              <tbody className="divide-y divide-gray-700">
                 {stats.mostActiveUsers.map((user, index) => (
-                  <tr key={user._id}>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                  <tr key={user._id} className="hover:bg-gray-800/50 transition-colors">
+                    <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-white">
                       #{index + 1}
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-white font-semibold">
                       {user.username}
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300">
                       {user.sessionCount}
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300">
                       {user.completionCount}
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-cyan-400 font-bold">
                       {user.totalScore}
                     </td>
                   </tr>
@@ -252,41 +252,41 @@ function SystemStats({ stats }) {
 
       {/* Challenge Performance */}
       {stats.challengePerformance && stats.challengePerformance.length > 0 && (
-        <div className="card">
-          <h3 className="text-lg font-semibold mb-4">Challenge Performance</h3>
+        <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-6 border border-gray-700 shadow-xl">
+          <h3 className="text-xl font-bold mb-6 text-white">Challenge Performance</h3>
           <div className="overflow-x-auto">
-            <table className="min-w-full divide-y divide-gray-200">
-              <thead className="bg-gray-50">
+            <table className="min-w-full divide-y divide-gray-700">
+              <thead>
                 <tr>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Challenge</th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Attempts</th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Completions</th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Success Rate</th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Avg Time</th>
+                  <th className="px-6 py-3 text-left text-xs font-bold text-cyan-400 uppercase">Challenge</th>
+                  <th className="px-6 py-3 text-left text-xs font-bold text-cyan-400 uppercase">Attempts</th>
+                  <th className="px-6 py-3 text-left text-xs font-bold text-cyan-400 uppercase">Completions</th>
+                  <th className="px-6 py-3 text-left text-xs font-bold text-cyan-400 uppercase">Success Rate</th>
+                  <th className="px-6 py-3 text-left text-xs font-bold text-cyan-400 uppercase">Avg Time</th>
                 </tr>
               </thead>
-              <tbody className="bg-white divide-y divide-gray-200">
+              <tbody className="divide-y divide-gray-700">
                 {stats.challengePerformance.map((challenge) => (
-                  <tr key={challenge._id}>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                  <tr key={challenge._id} className="hover:bg-gray-800/50 transition-colors">
+                    <td className="px-6 py-4 whitespace-nowrap text-sm font-semibold text-white">
                       {challenge.title}
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300">
                       {challenge.attempts}
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300">
                       {challenge.completions}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm">
-                      <span className={`px-2 py-1 rounded text-xs ${
-                        challenge.successRate >= 70 ? 'bg-green-100 text-green-800' :
-                        challenge.successRate >= 40 ? 'bg-yellow-100 text-yellow-800' :
-                        'bg-red-100 text-red-800'
+                      <span className={`px-3 py-1 rounded-full text-xs font-bold shadow-lg ${
+                        challenge.successRate >= 70 ? 'bg-gradient-to-r from-green-500 to-emerald-600 text-white shadow-green-500/30' :
+                        challenge.successRate >= 40 ? 'bg-gradient-to-r from-yellow-500 to-orange-500 text-white shadow-yellow-500/30' :
+                        'bg-gradient-to-r from-red-500 to-rose-600 text-white shadow-red-500/30'
                       }`}>
                         {challenge.successRate.toFixed(1)}%
                       </span>
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300">
                       {challenge.avgTime ? `${challenge.avgTime.toFixed(1)} min` : 'N/A'}
                     </td>
                   </tr>

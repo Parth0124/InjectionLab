@@ -27,39 +27,39 @@ function SessionInfo({ sessionId, challenge }) {
   }
 
   return (
-    <div className="card">
-      <h3 className="text-lg font-semibold mb-4">Session Info</h3>
+    <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-6 border border-gray-700 shadow-xl">
+      <h3 className="text-xl font-bold mb-4 text-white">Session Info</h3>
       
-      <div className="space-y-3">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center text-gray-600">
-            <ClockIcon className="h-4 w-4 mr-2" />
-            <span className="text-sm">Time Remaining</span>
+      <div className="space-y-4">
+        <div className="flex items-center justify-between p-3 bg-gray-900/50 rounded-lg border border-gray-700">
+          <div className="flex items-center text-gray-400">
+            <ClockIcon className="h-5 w-5 mr-2 text-cyan-400" />
+            <span className="text-sm font-semibold">Time Remaining</span>
           </div>
-          <span className={`text-sm font-medium ${
-            timeRemaining < 300 ? 'text-red-600' : 'text-gray-900'
+          <span className={`text-sm font-bold ${
+            timeRemaining < 300 ? 'text-red-400' : 'text-cyan-400'
           }`}>
             {formatTime(timeRemaining)}
           </span>
         </div>
 
-        <div className="flex items-center justify-between">
-          <div className="flex items-center text-gray-600">
-            <CircleStackIcon className="h-4 w-4 mr-2" />
-            <span className="text-sm">Session ID</span>
+        <div className="flex items-center justify-between p-3 bg-gray-900/50 rounded-lg border border-gray-700">
+          <div className="flex items-center text-gray-400">
+            <CircleStackIcon className="h-5 w-5 mr-2 text-purple-400" />
+            <span className="text-sm font-semibold">Session ID</span>
           </div>
-          <span className="text-xs font-mono text-gray-900" title={sessionId}>
+          <span className="text-xs font-mono text-purple-400 font-bold" title={sessionId}>
             {sessionId?.substring(0, 8)}...
           </span>
         </div>
 
         {challenge && (
-          <div className="flex items-center justify-between">
-            <div className="flex items-center text-gray-600">
-              <ChartBarIcon className="h-4 w-4 mr-2" />
-              <span className="text-sm">Points</span>
+          <div className="flex items-center justify-between p-3 bg-gray-900/50 rounded-lg border border-gray-700">
+            <div className="flex items-center text-gray-400">
+              <ChartBarIcon className="h-5 w-5 mr-2 text-pink-400" />
+              <span className="text-sm font-semibold">Points</span>
             </div>
-            <span className="text-sm font-medium text-gray-900">
+            <span className="text-sm font-bold text-pink-400">
               {challenge.points}
             </span>
           </div>
@@ -67,14 +67,14 @@ function SessionInfo({ sessionId, challenge }) {
       </div>
 
       {timeRemaining < 300 && timeRemaining > 0 && (
-        <div className="mt-4 p-2 bg-red-50 rounded text-xs text-red-600">
-          Session expires in less than 5 minutes!
+        <div className="mt-4 p-3 bg-gradient-to-r from-red-900/50 to-orange-900/50 rounded-lg text-xs text-red-300 border border-red-700/50 font-semibold">
+          ⚠️ Session expires in less than 5 minutes!
         </div>
       )}
 
       {timeRemaining === 0 && (
-        <div className="mt-4 p-2 bg-red-50 rounded text-xs text-red-600">
-          Session has expired. Please start a new session.
+        <div className="mt-4 p-3 bg-gradient-to-r from-red-900/50 to-rose-900/50 rounded-lg text-xs text-red-300 border border-red-700/50 font-semibold">
+          ⏰ Session has expired. Please start a new session.
         </div>
       )}
     </div>

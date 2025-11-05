@@ -4,7 +4,8 @@ import {
   UsersIcon, 
   AcademicCapIcon, 
   ChartBarIcon,
-  CircleStackIcon
+  CircleStackIcon,
+  ArrowTrendingUpIcon
 } from '@heroicons/react/24/outline'
 import { adminAPI } from '../../api/admin'
 import StatsCard from '../../components/dashboard/StatsCard'
@@ -44,94 +45,111 @@ function AdminDashboard() {
 
   if (isLoading) {
     return (
-      <div className="flex justify-center items-center h-64">
+      <div className="flex justify-center items-center min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900">
         <LoadingSpinner size="lg" />
       </div>
     )
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      <h1 className="text-3xl font-bold text-gray-900 mb-8">Admin Dashboard</h1>
-
-      {/* Stats Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-        <StatsCard
-          title="Total Users"
-          value={stats?.users?.total || 0}
-          icon={<UsersIcon className="h-6 w-6" />}
-          color="blue"
-        />
-        <StatsCard
-          title="Active Users"
-          value={stats?.users?.active || 0}
-          icon={<UsersIcon className="h-6 w-6" />}
-          color="green"
-        />
-        <StatsCard
-          title="Total Challenges"
-          value={stats?.challenges?.total || 0}
-          icon={<AcademicCapIcon className="h-6 w-6" />}
-          color="purple"
-        />
-        <StatsCard
-          title="Active Sessions"
-          value={stats?.sessions?.activeSessions || 0}
-          icon={<CircleStackIcon className="h-6 w-6" />}
-          color="yellow"
-        />
-      </div>
-
-      {/* Management Links */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <Link to="/admin/users" className="card hover:shadow-lg transition-shadow">
-          <UsersIcon className="h-8 w-8 text-primary-600 mb-3" />
-          <h2 className="text-lg font-semibold mb-2">User Management</h2>
-          <p className="text-gray-600 text-sm">
-            Manage user accounts, roles, and permissions
+    <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <div className="mb-8">
+          <h1 className="text-4xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+            Admin Dashboard
+          </h1>
+          <p className="mt-2 text-lg text-gray-400">
+            Manage users, challenges, and monitor system performance
           </p>
-        </Link>
-
-        <Link to="/admin/challenges" className="card hover:shadow-lg transition-shadow">
-          <AcademicCapIcon className="h-8 w-8 text-primary-600 mb-3" />
-          <h2 className="text-lg font-semibold mb-2">Challenge Management</h2>
-          <p className="text-gray-600 text-sm">
-            Create, edit, and manage SQL injection challenges
-          </p>
-        </Link>
-
-        <div className="card">
-          <ChartBarIcon className="h-8 w-8 text-primary-600 mb-3" />
-          <h2 className="text-lg font-semibold mb-2">System Analytics</h2>
-          <p className="text-gray-600 text-sm mb-3">
-            View detailed system statistics and reports
-          </p>
-          <button className="btn-primary text-sm">
-            View Reports
-          </button>
         </div>
-      </div>
 
-      {/* Recent Activity */}
-      {stats?.recentActivity && (
-        <div className="mt-8 card">
-          <h2 className="text-xl font-semibold mb-4">Recent System Activity</h2>
-          <div className="space-y-3">
-            {stats.recentActivity.newUsers?.length > 0 && (
-              <div>
-                <h3 className="text-sm font-medium text-gray-700 mb-2">New Users</h3>
-                <div className="space-y-1">
-                  {stats.recentActivity.newUsers.map((user, idx) => (
-                    <div key={idx} className="text-sm text-gray-600">
-                      {user.username} joined {formatRelativeTime(user.createdAt)}
-                    </div>
-                  ))}
+        {/* Stats Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+          <StatsCard
+            title="Total Users"
+            value={stats?.users?.total || 0}
+            icon={<UsersIcon className="h-6 w-6" />}
+            color="blue"
+          />
+          <StatsCard
+            title="Active Users"
+            value={stats?.users?.active || 0}
+            icon={<ArrowTrendingUpIcon className="h-6 w-6" />}
+            color="green"
+          />
+          <StatsCard
+            title="Total Challenges"
+            value={stats?.challenges?.total || 0}
+            icon={<AcademicCapIcon className="h-6 w-6" />}
+            color="purple"
+          />
+          <StatsCard
+            title="Active Sessions"
+            value={stats?.sessions?.activeSessions || 0}
+            icon={<CircleStackIcon className="h-6 w-6" />}
+            color="yellow"
+          />
+        </div>
+
+        {/* Management Links */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+          <Link 
+            to="/admin/users" 
+            className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-6 border border-gray-700 shadow-xl hover:border-cyan-500 hover:shadow-lg hover:shadow-cyan-500/20 transition-all duration-300 transform hover:-translate-y-1 group"
+          >
+            <UsersIcon className="h-10 w-10 text-cyan-400 mb-4 group-hover:scale-110 transition-transform duration-300" />
+            <h2 className="text-xl font-bold text-white mb-2">User Management</h2>
+            <p className="text-gray-400 text-sm">
+              Manage user accounts, roles, and permissions
+            </p>
+          </Link>
+
+          <Link 
+            to="/admin/challenges" 
+            className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-6 border border-gray-700 shadow-xl hover:border-purple-500 hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300 transform hover:-translate-y-1 group"
+          >
+            <AcademicCapIcon className="h-10 w-10 text-purple-400 mb-4 group-hover:scale-110 transition-transform duration-300" />
+            <h2 className="text-xl font-bold text-white mb-2">Challenge Management</h2>
+            <p className="text-gray-400 text-sm">
+              Create, edit, and manage SQL injection challenges
+            </p>
+          </Link>
+        </div>
+
+        {/* Recent Activity */}
+        {stats?.recentActivity && (
+          <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-6 border border-gray-700 shadow-xl">
+            <h2 className="text-2xl font-bold text-white mb-6">Recent System Activity</h2>
+            <div className="space-y-4">
+              {stats.recentActivity.newUsers?.length > 0 && (
+                <div>
+                  <h3 className="text-sm font-semibold text-cyan-400 mb-3 uppercase tracking-wide">New Users</h3>
+                  <div className="space-y-2">
+                    {stats.recentActivity.newUsers.map((user, idx) => (
+                      <div 
+                        key={idx} 
+                        className="flex items-center justify-between p-3 bg-gray-800/50 rounded-lg border border-gray-700 hover:border-cyan-500/50 transition-colors duration-200"
+                      >
+                        <div className="flex items-center space-x-3">
+                          <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
+                          <span className="text-gray-300 font-medium">{user.username}</span>
+                        </div>
+                        <span className="text-sm text-gray-500">
+                          joined {formatRelativeTime(user.createdAt)}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            )}
+              )}
+              {(!stats.recentActivity.newUsers || stats.recentActivity.newUsers.length === 0) && (
+                <p className="text-gray-400 text-center py-4">No recent activity to display</p>
+              )}
+            </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   )
 }
