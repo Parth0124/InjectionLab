@@ -28,6 +28,8 @@ function ChallengeManager({ challenges, isLoading, onCreateChallenge, onUpdateCh
 
   const categories = [
     'basic-bypass',
+    'information-disclosure',
+    
     'union-based',
     'boolean-blind',
     'time-based',

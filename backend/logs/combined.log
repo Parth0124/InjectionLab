@@ -1826,3 +1826,274 @@
 {"level":"info","message":"GET /api/challenges - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:06:56.375Z"}
 {"level":"info","message":"GET /api/admin/stats - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:06:57.903Z"}
 {"level":"info","message":"GET /api/admin/stats - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:06:58.678Z"}
+{"level":"info","message":"GET /api/admin/users - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:13:41.221Z"}
+{"level":"info","message":"GET /api/admin/users - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:13:41.415Z"}
+{"level":"info","message":"GET /api/admin/users - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:13:55.576Z"}
+{"level":"info","message":"GET /api/admin/users - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:13:55.808Z"}
+{"level":"info","message":"GET /api/admin/users - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:13:56.134Z"}
+{"level":"info","message":"GET /api/admin/users - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:13:57.298Z"}
+{"level":"info","message":"GET /api/admin/users - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:13:57.985Z"}
+{"level":"info","message":"GET /api/admin/users - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:13:58.114Z"}
+{"level":"info","message":"GET /api/admin/users - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:13:59.208Z"}
+{"level":"info","message":"GET /api/admin/users - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:13:59.416Z"}
+{"level":"info","message":"GET /api/admin/users - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:13:59.599Z"}
+{"level":"info","message":"GET /api/admin/users - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:13:59.749Z"}
+{"level":"info","message":"GET /api/admin/users - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:14:00.456Z"}
+{"level":"info","message":"GET /api/admin/users - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:14:00.584Z"}
+{"level":"info","message":"GET /api/admin/users - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:14:00.796Z"}
+{"level":"info","message":"GET /api/admin/users - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:14:00.899Z"}
+{"level":"info","message":"GET /api/admin/users - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:14:01.232Z"}
+{"level":"info","message":"GET /api/admin/users - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:14:02.765Z"}
+{"level":"info","message":"DELETE /api/admin/users/69092ff7f7b540c0dd0e47f5 - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:14:15.290Z"}
+{"level":"info","message":"User lisa_learner deleted by admin undefined","service":"injectionlab-backend","timestamp":"2025-11-05T22:14:15.863Z"}
+{"level":"info","message":"GET /api/admin/users - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:14:15.869Z"}
+{"level":"error","message":"SyntaxError: Unexpected token 'f', \"false\" is not valid JSON\n    at JSON.parse (<anonymous>)\n    at createStrictSyntaxError (/Users/parth/Documents/semester_7 IIITDWD/Cybersecurity Techniques/InjectionLab/backend/node_modules/body-parser/lib/types/json.js:156:10)\n    at parse (/Users/parth/Documents/semester_7 IIITDWD/Cybersecurity Techniques/InjectionLab/backend/node_modules/body-parser/lib/types/json.js:71:15)\n    at /Users/parth/Documents/semester_7 IIITDWD/Cybersecurity Techniques/InjectionLab/backend/node_modules/body-parser/lib/read.js:123:18\n    at AsyncResource.runInAsyncScope (node:async_hooks:214:14)\n    at invokeCallback (/Users/parth/Documents/semester_7 IIITDWD/Cybersecurity Techniques/InjectionLab/backend/node_modules/raw-body/index.js:238:16)\n    at done (/Users/parth/Documents/semester_7 IIITDWD/Cybersecurity Techniques/InjectionLab/backend/node_modules/raw-body/index.js:227:7)\n    at IncomingMessage.onEnd (/Users/parth/Documents/semester_7 IIITDWD/Cybersecurity Techniques/InjectionLab/backend/node_modules/raw-body/index.js:287:7)\n    at IncomingMessage.emit (node:events:518:28)\n    at endReadableNT (node:internal/streams/readable:1698:12)","service":"injectionlab-backend","timestamp":"2025-11-05T22:15:48.797Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:15:57.610Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:15:58.347Z"}
+{"level":"info","message":"GET /api/auth/profile - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:16:51.068Z"}
+{"level":"info","message":"GET /api/auth/profile - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:16:51.171Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:16:51.178Z"}
+{"level":"info","message":"GET /api/auth/profile - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:16:51.258Z"}
+{"level":"info","message":"GET /api/auth/profile - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:16:51.318Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:16:52.166Z"}
+{"level":"info","message":"GET /api/admin/users - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:17:04.702Z"}
+{"level":"info","message":"GET /api/admin/users - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:17:04.934Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:17:07.670Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:17:08.414Z"}
+{"level":"info","message":"GET /api/challenges - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:17:08.998Z"}
+{"level":"info","message":"GET /api/challenges - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:17:09.138Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:17:37.057Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:17:37.932Z"}
+{"level":"info","message":"POST /api/auth/login - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:17:53.491Z"}
+{"level":"info","message":"User logged in: john_beginner","service":"injectionlab-backend","timestamp":"2025-11-05T22:17:53.870Z"}
+{"level":"info","message":"GET /api/users/progress - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:17:53.895Z"}
+{"level":"info","message":"GET /api/users/stats - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:17:53.897Z"}
+{"level":"info","message":"GET /api/challenges - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:17:53.900Z"}
+{"level":"info","message":"GET /api/users/progress - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:17:54.016Z"}
+{"level":"info","message":"GET /api/challenges - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:17:54.018Z"}
+{"level":"info","message":"GET /api/users/stats - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:17:54.065Z"}
+{"level":"info","message":"GET /api/challenges - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:19:30.263Z"}
+{"level":"info","message":"GET /api/challenges - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:19:30.405Z"}
+{"level":"info","message":"GET /api/challenges/69093c3fda65334437a1b4b8 - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:19:40.551Z"}
+{"level":"info","message":"GET /api/challenges/69093c3fda65334437a1b4b8 - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:19:40.667Z"}
+{"level":"info","message":"POST /api/sql-injection/session/start - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:19:51.566Z"}
+{"level":"info","message":"Created user database: 82ec9efe-9b24-468e-a6e4-93e7d00a7a53 for user: 69092e89f7b540c0dd0e47de","service":"injectionlab-backend","timestamp":"2025-11-05T22:19:51.692Z"}
+{"level":"info","message":"Created sandbox session: 82ec9efe-9b24-468e-a6e4-93e7d00a7a53 for user: 69092e89f7b540c0dd0e47de","service":"injectionlab-backend","timestamp":"2025-11-05T22:19:51.730Z"}
+{"level":"info","message":"Practice session started: 82ec9efe-9b24-468e-a6e4-93e7d00a7a53 for user: 69092e89f7b540c0dd0e47de, challenge: 69093c3fda65334437a1b4b8","service":"injectionlab-backend","timestamp":"2025-11-05T22:19:51.783Z"}
+{"level":"info","message":"GET /api/sql-injection/session/82ec9efe-9b24-468e-a6e4-93e7d00a7a53 - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:19:51.814Z"}
+{"level":"info","message":"GET /api/sql-injection/session/82ec9efe-9b24-468e-a6e4-93e7d00a7a53 - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:19:51.920Z"}
+{"level":"info","message":"GET /api/challenges/69093c3fda65334437a1b4b8 - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:19:51.925Z"}
+{"level":"info","message":"GET /api/sql-injection/session/82ec9efe-9b24-468e-a6e4-93e7d00a7a53 - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:19:52.033Z"}
+{"level":"info","message":"GET /api/challenges/69093c3fda65334437a1b4b8 - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:19:52.058Z"}
+{"level":"info","message":"GET /api/sql-injection/session/82ec9efe-9b24-468e-a6e4-93e7d00a7a53 - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:19:52.173Z"}
+{"level":"info","message":"GET /api/challenges/69093c3fda65334437a1b4b8 - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:19:52.226Z"}
+{"level":"info","message":"GET /api/challenges/69093c3fda65334437a1b4b8 - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:19:52.338Z"}
+{"level":"info","message":"POST /api/sql-injection/session/end - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:20:03.910Z"}
+{"level":"info","message":"Cleaned up database session: 82ec9efe-9b24-468e-a6e4-93e7d00a7a53","service":"injectionlab-backend","timestamp":"2025-11-05T22:20:03.980Z"}
+{"level":"info","message":"Cleaned up session: 82ec9efe-9b24-468e-a6e4-93e7d00a7a53","service":"injectionlab-backend","timestamp":"2025-11-05T22:20:04.017Z"}
+{"level":"info","message":"Session 82ec9efe-9b24-468e-a6e4-93e7d00a7a53 ended by user 69092e89f7b540c0dd0e47de","service":"injectionlab-backend","timestamp":"2025-11-05T22:20:04.017Z"}
+{"level":"info","message":"GET /api/users/progress - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:20:04.050Z"}
+{"level":"info","message":"GET /api/users/stats - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:20:04.054Z"}
+{"level":"info","message":"GET /api/challenges - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:20:04.056Z"}
+{"level":"info","message":"GET /api/users/progress - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:20:04.154Z"}
+{"level":"info","message":"GET /api/challenges - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:20:04.170Z"}
+{"level":"info","message":"GET /api/users/stats - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:20:04.212Z"}
+{"level":"info","message":"GET /api/challenges - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:20:06.283Z"}
+{"level":"info","message":"GET /api/challenges - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:20:06.445Z"}
+{"level":"info","message":"GET /api/challenges/69093c3fda65334437a1b4b8 - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:20:09.638Z"}
+{"level":"info","message":"GET /api/challenges/69093c3fda65334437a1b4b8 - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:20:09.738Z"}
+{"level":"info","message":"POST /api/sql-injection/session/start - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:20:11.544Z"}
+{"level":"info","message":"Created user database: d4920bb0-1068-4fdd-a03c-864a39bef1ed for user: 69092e89f7b540c0dd0e47de","service":"injectionlab-backend","timestamp":"2025-11-05T22:20:11.628Z"}
+{"level":"info","message":"Created sandbox session: d4920bb0-1068-4fdd-a03c-864a39bef1ed for user: 69092e89f7b540c0dd0e47de","service":"injectionlab-backend","timestamp":"2025-11-05T22:20:11.655Z"}
+{"level":"info","message":"Practice session started: d4920bb0-1068-4fdd-a03c-864a39bef1ed for user: 69092e89f7b540c0dd0e47de, challenge: 69093c3fda65334437a1b4b8","service":"injectionlab-backend","timestamp":"2025-11-05T22:20:11.681Z"}
+{"level":"info","message":"GET /api/sql-injection/session/d4920bb0-1068-4fdd-a03c-864a39bef1ed - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:20:11.713Z"}
+{"level":"info","message":"GET /api/sql-injection/session/d4920bb0-1068-4fdd-a03c-864a39bef1ed - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:20:11.817Z"}
+{"level":"info","message":"GET /api/challenges/69093c3fda65334437a1b4b8 - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:20:11.820Z"}
+{"level":"info","message":"GET /api/sql-injection/session/d4920bb0-1068-4fdd-a03c-864a39bef1ed - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:20:11.931Z"}
+{"level":"info","message":"GET /api/challenges/69093c3fda65334437a1b4b8 - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:20:11.935Z"}
+{"level":"info","message":"GET /api/sql-injection/session/d4920bb0-1068-4fdd-a03c-864a39bef1ed - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:20:12.078Z"}
+{"level":"info","message":"GET /api/challenges/69093c3fda65334437a1b4b8 - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:20:12.080Z"}
+{"level":"info","message":"GET /api/challenges/69093c3fda65334437a1b4b8 - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:20:12.259Z"}
+{"level":"info","message":"POST /api/sql-injection/hint - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:20:18.598Z"}
+{"level":"info","message":"Hint 0 used by user 69092e89f7b540c0dd0e47de for challenge 69093c3fda65334437a1b4b8","service":"injectionlab-backend","timestamp":"2025-11-05T22:20:18.719Z"}
+{"level":"info","message":"POST /api/sql-injection/session/end - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:21:42.618Z"}
+{"level":"info","message":"Cleaned up database session: d4920bb0-1068-4fdd-a03c-864a39bef1ed","service":"injectionlab-backend","timestamp":"2025-11-05T22:21:42.677Z"}
+{"level":"info","message":"Cleaned up session: d4920bb0-1068-4fdd-a03c-864a39bef1ed","service":"injectionlab-backend","timestamp":"2025-11-05T22:21:42.705Z"}
+{"level":"info","message":"Session d4920bb0-1068-4fdd-a03c-864a39bef1ed ended by user 69092e89f7b540c0dd0e47de","service":"injectionlab-backend","timestamp":"2025-11-05T22:21:42.705Z"}
+{"level":"info","message":"GET /api/users/progress - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:21:42.743Z"}
+{"level":"info","message":"GET /api/users/stats - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:21:42.746Z"}
+{"level":"info","message":"GET /api/challenges - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:21:42.749Z"}
+{"level":"info","message":"GET /api/users/progress - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:21:42.847Z"}
+{"level":"info","message":"GET /api/challenges - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:21:42.855Z"}
+{"level":"info","message":"GET /api/users/stats - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:21:42.910Z"}
+{"level":"info","message":"GET /api/challenges - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:21:46.466Z"}
+{"level":"info","message":"GET /api/challenges - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:21:46.590Z"}
+{"level":"info","message":"GET /api/users/progress - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:26:06.537Z"}
+{"level":"info","message":"GET /api/users/stats - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:26:06.552Z"}
+{"level":"info","message":"GET /api/challenges - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:26:06.553Z"}
+{"level":"info","message":"GET /api/challenges - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:26:06.746Z"}
+{"level":"info","message":"GET /api/users/progress - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:26:06.747Z"}
+{"level":"info","message":"GET /api/users/stats - ::1","service":"injectionlab-backend","timestamp":"2025-11-05T22:26:06.797Z"}
+{"level":"info","message":"GET /api/auth/profile - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T03:43:23.581Z"}
+{"level":"info","message":"GET /api/auth/profile - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T03:43:23.642Z"}
+{"level":"info","message":"GET /api/auth/profile - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T03:43:23.666Z"}
+{"level":"info","message":"POST /api/auth/register - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T03:44:02.890Z"}
+{"level":"info","message":"New user registered: Parth","service":"injectionlab-backend","timestamp":"2025-11-06T03:44:03.295Z"}
+{"level":"info","message":"GET /api/users/progress - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T03:44:03.328Z"}
+{"level":"info","message":"GET /api/users/stats - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T03:44:03.329Z"}
+{"level":"info","message":"GET /api/challenges - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T03:44:03.330Z"}
+{"level":"info","message":"GET /api/users/progress - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T03:44:03.447Z"}
+{"level":"info","message":"GET /api/challenges - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T03:44:03.465Z"}
+{"level":"info","message":"GET /api/users/stats - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T03:44:03.510Z"}
+{"level":"info","message":"GET /api/challenges - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T03:44:07.281Z"}
+{"level":"info","message":"GET /api/challenges - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T03:44:07.382Z"}
+{"level":"info","message":"GET /api/users/progress - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T03:44:09.611Z"}
+{"level":"info","message":"GET /api/users/stats - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T03:44:09.614Z"}
+{"level":"info","message":"GET /api/challenges - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T03:44:09.617Z"}
+{"level":"info","message":"GET /api/users/progress - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T03:44:09.717Z"}
+{"level":"info","message":"GET /api/challenges - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T03:44:09.723Z"}
+{"level":"info","message":"GET /api/users/stats - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T03:44:09.758Z"}
+{"level":"info","message":"POST /api/auth/register - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T03:44:29.456Z"}
+{"level":"info","message":"New user registered: admin_user","service":"injectionlab-backend","timestamp":"2025-11-06T03:44:29.826Z"}
+{"level":"info","message":"POST /api/auth/login - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T03:44:54.461Z"}
+{"level":"info","message":"User logged in: admin_user","service":"injectionlab-backend","timestamp":"2025-11-06T03:44:54.854Z"}
+{"level":"info","message":"GET /api/users/progress - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T03:44:54.882Z"}
+{"level":"info","message":"GET /api/users/stats - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T03:44:54.884Z"}
+{"level":"info","message":"GET /api/challenges - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T03:44:54.886Z"}
+{"level":"info","message":"GET /api/challenges - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T03:44:54.978Z"}
+{"level":"info","message":"GET /api/users/progress - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T03:44:54.980Z"}
+{"level":"info","message":"GET /api/users/stats - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T03:44:55.012Z"}
+{"level":"info","message":"POST /api/auth/register - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T03:48:04.563Z"}
+{"level":"info","message":"New user registered: Arnav","service":"injectionlab-backend","timestamp":"2025-11-06T03:48:04.982Z"}
+{"level":"info","message":"POST /api/auth/login - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T03:48:31.144Z"}
+{"level":"info","message":"POST /api/auth/login - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T03:48:39.616Z"}
+{"level":"info","message":"POST /api/auth/login - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T03:48:55.200Z"}
+{"_message":"User validation failed","errors":{"role":{"kind":"enum","message":"`Admin` is not a valid enum value for path `role`.","name":"ValidatorError","path":"role","properties":{"enumValues":["student","instructor","admin"],"length":5,"message":"`Admin` is not a valid enum value for path `role`.","path":"role","type":"enum","value":"Admin"},"value":"Admin"}},"level":"error","message":"Login error: User validation failed: role: `Admin` is not a valid enum value for path `role`.","service":"injectionlab-backend","stack":"ValidationError: User validation failed: role: `Admin` is not a valid enum value for path `role`.\n    at Document.invalidate (/Users/parth/Documents/semester_7 IIITDWD/Cybersecurity Techniques/InjectionLab/backend/node_modules/mongoose/lib/document.js:3358:32)\n    at /Users/parth/Documents/semester_7 IIITDWD/Cybersecurity Techniques/InjectionLab/backend/node_modules/mongoose/lib/document.js:3119:17\n    at /Users/parth/Documents/semester_7 IIITDWD/Cybersecurity Techniques/InjectionLab/backend/node_modules/mongoose/lib/schemaType.js:1416:9\n    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)","timestamp":"2025-11-06T03:48:55.584Z"}
+{"level":"info","message":"POST /api/auth/login - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T03:49:15.227Z"}
+{"_message":"User validation failed","errors":{"role":{"kind":"enum","message":"`Admin` is not a valid enum value for path `role`.","name":"ValidatorError","path":"role","properties":{"enumValues":["student","instructor","admin"],"length":5,"message":"`Admin` is not a valid enum value for path `role`.","path":"role","type":"enum","value":"Admin"},"value":"Admin"}},"level":"error","message":"Login error: User validation failed: role: `Admin` is not a valid enum value for path `role`.","service":"injectionlab-backend","stack":"ValidationError: User validation failed: role: `Admin` is not a valid enum value for path `role`.\n    at Document.invalidate (/Users/parth/Documents/semester_7 IIITDWD/Cybersecurity Techniques/InjectionLab/backend/node_modules/mongoose/lib/document.js:3358:32)\n    at /Users/parth/Documents/semester_7 IIITDWD/Cybersecurity Techniques/InjectionLab/backend/node_modules/mongoose/lib/document.js:3119:17\n    at /Users/parth/Documents/semester_7 IIITDWD/Cybersecurity Techniques/InjectionLab/backend/node_modules/mongoose/lib/schemaType.js:1416:9\n    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)","timestamp":"2025-11-06T03:49:15.577Z"}
+{"level":"info","message":"POST /api/auth/login - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T03:49:57.195Z"}
+{"level":"info","message":"User logged in: Arnav","service":"injectionlab-backend","timestamp":"2025-11-06T03:49:57.577Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T03:49:57.612Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T03:49:58.531Z"}
+{"level":"info","message":"GET /api/admin/users - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T03:50:02.954Z"}
+{"level":"info","message":"GET /api/admin/users - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T03:50:03.105Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T03:50:07.772Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T03:50:08.872Z"}
+{"level":"info","message":"GET /api/challenges - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:03:04.704Z"}
+{"level":"info","message":"GET /api/challenges - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:03:04.830Z"}
+{"level":"info","message":"POST /api/challenges - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:07:27.575Z"}
+{"level":"info","message":"New challenge created: Login Bypass - Authentication Bypass by undefined","service":"injectionlab-backend","timestamp":"2025-11-06T04:07:27.770Z"}
+{"level":"info","message":"GET /api/challenges - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:07:27.782Z"}
+{"level":"info","message":"POST /api/challenges - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:13:31.014Z"}
+{"level":"info","message":"New challenge created: Data Extraction by undefined","service":"injectionlab-backend","timestamp":"2025-11-06T04:13:31.173Z"}
+{"level":"info","message":"GET /api/challenges - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:13:31.184Z"}
+{"level":"info","message":"PUT /api/admin/challenges/690c206b9b70aac11df03f55 - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:14:13.757Z"}
+{"level":"info","message":"Challenge Data Extraction - Viewing All Users updated by admin undefined","service":"injectionlab-backend","timestamp":"2025-11-06T04:14:13.949Z"}
+{"level":"info","message":"GET /api/challenges - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:14:13.961Z"}
+{"level":"info","message":"POST /api/challenges - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:17:33.480Z"}
+{"level":"info","message":"New challenge created: Column Discovery - UNION SELECT Basics by undefined","service":"injectionlab-backend","timestamp":"2025-11-06T04:17:33.611Z"}
+{"level":"info","message":"GET /api/challenges - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:17:33.620Z"}
+{"level":"info","message":"PUT /api/admin/challenges/690c215d9b70aac11df03f7a - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:22:41.754Z"}
+{"level":"info","message":"Challenge Column Discovery - UNION SELECT Basics updated by admin undefined","service":"injectionlab-backend","timestamp":"2025-11-06T04:22:41.916Z"}
+{"level":"info","message":"GET /api/challenges - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:22:41.931Z"}
+{"level":"info","message":"PUT /api/admin/challenges/690c206b9b70aac11df03f55 - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:22:52.441Z"}
+{"level":"info","message":"Challenge Data Extraction - Viewing All Users updated by admin undefined","service":"injectionlab-backend","timestamp":"2025-11-06T04:22:52.674Z"}
+{"level":"info","message":"GET /api/challenges - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:22:52.682Z"}
+{"level":"info","message":"POST /api/challenges - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:26:51.723Z"}
+{"level":"info","message":"New challenge created: Database Enumeration - Schema Discovery by undefined","service":"injectionlab-backend","timestamp":"2025-11-06T04:26:51.874Z"}
+{"level":"info","message":"GET /api/challenges - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:26:51.882Z"}
+{"level":"info","message":"POST /api/challenges - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:31:08.601Z"}
+{"level":"info","message":"New challenge created: Time-Based Blind Injection by undefined","service":"injectionlab-backend","timestamp":"2025-11-06T04:31:08.800Z"}
+{"level":"info","message":"GET /api/challenges - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:31:08.810Z"}
+{"level":"info","message":"POST /api/challenges - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:33:49.488Z"}
+{"level":"info","message":"GET /api/auth/profile - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:34:01.447Z"}
+{"level":"info","message":"GET /api/auth/profile - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:34:01.539Z"}
+{"level":"info","message":"GET /api/challenges - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:34:01.547Z"}
+{"level":"info","message":"GET /api/auth/profile - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:34:01.631Z"}
+{"level":"info","message":"GET /api/challenges - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:34:01.692Z"}
+{"level":"info","message":"GET /api/auth/profile - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:34:01.725Z"}
+{"level":"info","message":"POST /api/challenges - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:36:00.965Z"}
+{"level":"info","message":"GET /api/auth/profile - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:36:09.153Z"}
+{"level":"info","message":"GET /api/auth/profile - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:36:09.240Z"}
+{"level":"info","message":"GET /api/challenges - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:36:09.245Z"}
+{"level":"info","message":"GET /api/auth/profile - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:36:09.308Z"}
+{"level":"info","message":"GET /api/challenges - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:36:09.387Z"}
+{"level":"info","message":"GET /api/auth/profile - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:36:09.570Z"}
+{"level":"info","message":"GET /api/auth/profile - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:36:10.256Z"}
+{"level":"info","message":"GET /api/auth/profile - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:36:10.320Z"}
+{"level":"info","message":"GET /api/challenges - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:36:10.324Z"}
+{"level":"info","message":"GET /api/auth/profile - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:36:10.391Z"}
+{"level":"info","message":"GET /api/auth/profile - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:36:10.469Z"}
+{"level":"info","message":"GET /api/challenges - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:36:10.472Z"}
+{"level":"info","message":"POST /api/challenges - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:39:00.739Z"}
+{"level":"info","message":"GET /api/auth/profile - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:39:18.869Z"}
+{"level":"info","message":"GET /api/auth/profile - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:39:18.944Z"}
+{"level":"info","message":"GET /api/challenges - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:39:18.954Z"}
+{"level":"info","message":"GET /api/auth/profile - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:39:19.009Z"}
+{"level":"info","message":"GET /api/auth/profile - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:39:19.072Z"}
+{"level":"info","message":"GET /api/challenges - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:39:19.092Z"}
+{"level":"info","message":"POST /api/auth/login - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:39:46.582Z"}
+{"level":"info","message":"POST /api/auth/register - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:40:39.110Z"}
+{"level":"info","message":"New user registered: Parth","service":"injectionlab-backend","timestamp":"2025-11-06T04:40:39.504Z"}
+{"level":"info","message":"GET /api/users/progress - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:40:39.534Z"}
+{"level":"info","message":"GET /api/challenges - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:40:39.537Z"}
+{"level":"info","message":"GET /api/users/stats - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:40:39.539Z"}
+{"level":"info","message":"GET /api/users/progress - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:40:39.630Z"}
+{"level":"info","message":"GET /api/challenges - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:40:39.678Z"}
+{"level":"info","message":"GET /api/users/stats - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:40:39.681Z"}
+{"level":"info","message":"GET /api/challenges - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:40:45.050Z"}
+{"level":"info","message":"GET /api/challenges - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:40:45.182Z"}
+{"level":"info","message":"GET /api/users/leaderboard - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:40:51.618Z"}
+{"level":"info","message":"GET /api/users/leaderboard - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:40:51.697Z"}
+{"level":"info","message":"GET /api/users/progress - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:41:29.405Z"}
+{"level":"info","message":"GET /api/users/stats - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:41:29.414Z"}
+{"level":"info","message":"GET /api/challenges - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:41:29.416Z"}
+{"level":"info","message":"GET /api/users/progress - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:41:29.536Z"}
+{"level":"info","message":"GET /api/challenges - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:41:29.566Z"}
+{"level":"info","message":"GET /api/users/stats - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:41:29.569Z"}
+{"level":"info","message":"GET /api/challenges - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:41:30.569Z"}
+{"level":"info","message":"GET /api/challenges - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:41:30.697Z"}
+{"level":"info","message":"GET /api/challenges/690c1eff9b70aac11df03f47 - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:41:31.992Z"}
+{"level":"info","message":"GET /api/challenges/690c1eff9b70aac11df03f47 - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:41:32.124Z"}
+{"level":"info","message":"POST /api/sql-injection/session/start - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:41:33.332Z"}
+{"level":"info","message":"Created user database: 485eed1e-ee3f-44f3-bccb-14201f6175db for user: 690c26c79b70aac11df040ab","service":"injectionlab-backend","timestamp":"2025-11-06T04:41:33.463Z"}
+{"level":"info","message":"Created sandbox session: 485eed1e-ee3f-44f3-bccb-14201f6175db for user: 690c26c79b70aac11df040ab","service":"injectionlab-backend","timestamp":"2025-11-06T04:41:33.497Z"}
+{"level":"info","message":"Practice session started: 485eed1e-ee3f-44f3-bccb-14201f6175db for user: 690c26c79b70aac11df040ab, challenge: 690c1eff9b70aac11df03f47","service":"injectionlab-backend","timestamp":"2025-11-06T04:41:33.569Z"}
+{"level":"info","message":"GET /api/sql-injection/session/485eed1e-ee3f-44f3-bccb-14201f6175db - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:41:33.595Z"}
+{"level":"info","message":"GET /api/sql-injection/session/485eed1e-ee3f-44f3-bccb-14201f6175db - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:41:33.733Z"}
+{"level":"info","message":"GET /api/challenges/690c1eff9b70aac11df03f47 - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:41:33.737Z"}
+{"level":"info","message":"GET /api/sql-injection/session/485eed1e-ee3f-44f3-bccb-14201f6175db - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:41:33.864Z"}
+{"level":"info","message":"GET /api/challenges/690c1eff9b70aac11df03f47 - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:41:33.899Z"}
+{"level":"info","message":"GET /api/sql-injection/session/485eed1e-ee3f-44f3-bccb-14201f6175db - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:41:34.036Z"}
+{"level":"info","message":"GET /api/challenges/690c1eff9b70aac11df03f47 - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:41:34.068Z"}
+{"level":"info","message":"GET /api/challenges/690c1eff9b70aac11df03f47 - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:41:34.196Z"}
+{"level":"info","message":"POST /api/sql-injection/hint - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:41:38.345Z"}
+{"level":"info","message":"Hint 0 used by user 690c26c79b70aac11df040ab for challenge 690c1eff9b70aac11df03f47","service":"injectionlab-backend","timestamp":"2025-11-06T04:41:38.494Z"}
+{"level":"info","message":"POST /api/sql-injection/execute - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:42:19.166Z"}
+{"level":"info","message":"Potential SQL injection attempt by user 690c26c79b70aac11df040ab: select * from users where username = 'admin' or '1'='1'","service":"injectionlab-backend","timestamp":"2025-11-06T04:42:19.221Z"}
+{"level":"info","message":"User 690c26c79b70aac11df040ab completed challenge 690c1eff9b70aac11df03f47 with score 90","service":"injectionlab-backend","timestamp":"2025-11-06T04:42:19.612Z"}
+{"level":"info","message":"Query executed for session 485eed1e-ee3f-44f3-bccb-14201f6175db: successful injection","service":"injectionlab-backend","timestamp":"2025-11-06T04:42:19.650Z"}
+{"level":"info","message":"GET /api/sql-injection/session/485eed1e-ee3f-44f3-bccb-14201f6175db - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:42:19.658Z"}
+{"level":"info","message":"GET /api/challenges/690c1eff9b70aac11df03f47 - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:42:19.821Z"}
+{"level":"info","message":"POST /api/sql-injection/session/end - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:42:24.173Z"}
+{"level":"info","message":"Cleaned up database session: 485eed1e-ee3f-44f3-bccb-14201f6175db","service":"injectionlab-backend","timestamp":"2025-11-06T04:42:24.264Z"}
+{"level":"info","message":"Cleaned up session: 485eed1e-ee3f-44f3-bccb-14201f6175db","service":"injectionlab-backend","timestamp":"2025-11-06T04:42:24.302Z"}
+{"level":"info","message":"Session 485eed1e-ee3f-44f3-bccb-14201f6175db ended by user 690c26c79b70aac11df040ab","service":"injectionlab-backend","timestamp":"2025-11-06T04:42:24.302Z"}
+{"level":"info","message":"GET /api/users/progress - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:42:24.333Z"}
+{"level":"info","message":"GET /api/users/stats - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:42:24.336Z"}
+{"level":"info","message":"GET /api/challenges - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:42:24.338Z"}
+{"level":"info","message":"GET /api/users/progress - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:42:24.487Z"}
+{"level":"info","message":"GET /api/challenges - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:42:24.505Z"}
+{"level":"info","message":"GET /api/users/stats - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:42:24.540Z"}
+{"level":"info","message":"GET /api/auth/profile - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:42:27.573Z"}
+{"level":"info","message":"GET /api/auth/profile - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:42:27.684Z"}
+{"level":"info","message":"GET /api/users/progress - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:42:27.688Z"}
+{"level":"info","message":"GET /api/users/stats - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:42:27.690Z"}
+{"level":"info","message":"GET /api/challenges - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:42:27.693Z"}
+{"level":"info","message":"GET /api/auth/profile - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:42:27.783Z"}
+{"level":"info","message":"GET /api/users/progress - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:42:27.817Z"}
+{"level":"info","message":"GET /api/challenges - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:42:27.819Z"}
+{"level":"info","message":"GET /api/users/stats - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:42:27.890Z"}
+{"level":"info","message":"GET /api/auth/profile - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:42:27.892Z"}
+{"level":"info","message":"GET /api/users/leaderboard - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:42:32.871Z"}
+{"level":"info","message":"GET /api/users/leaderboard - ::1","service":"injectionlab-backend","timestamp":"2025-11-06T04:42:32.970Z"}

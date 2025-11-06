@@ -273,7 +273,7 @@ function Leaderboard() {
               <div className="bg-gradient-to-br from-cyan-900/40 to-blue-900/40 rounded-xl p-5 border border-cyan-700/50 hover:border-cyan-500 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/20 transform hover:-translate-y-1">
                 <div className="text-sm text-cyan-400 font-semibold mb-2">Your Rank</div>
                 <div className="text-3xl font-bold text-white">
-                  {userRank ? `#${userRank}` : 'N/A'}
+                  {userRank ? `${userRank}` : 'N/A'}
                 </div>
               </div>
               <div className="bg-gradient-to-br from-purple-900/40 to-pink-900/40 rounded-xl p-5 border border-purple-700/50 hover:border-purple-500 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20 transform hover:-translate-y-1">
